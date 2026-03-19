@@ -101,10 +101,3 @@ jobs:
 
           sendBroadcast();
           EOF
-```
-
----
-
-Commit both → trigger **Send Morning Notification Now** → check Actions log for:
-```
-Found X unique tokens from Y users
