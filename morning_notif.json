@@ -1,11 +1,75 @@
 {
-  "date": "2026-03-19",
-  "schedule": [
-    {"subject": "BEEE", "time": "9:30 AM"},
-    {"subject": "Thermodynamics", "time": "1:00 PM"}
-  ],
-  "must_carry": ["Casio", "Apron", "Graph"],
-  "quote": "Do not learn how to react, learn how to respond. -Buddha",
-  "holiday": false,
-  "holiday_note": ""
+  "MONDAY": {
+    "morning": [
+      {"subject": "EM", "time": "9:30 AM"},
+      {"subject": "MAT", "time": "10:20 AM"},
+      {"subject": "CHE", "time": "11:10 AM"}
+    ],
+    "afternoon": [
+      {"subject": "TD", "time": "1:00 PM"},
+      {"subject": "CHE LAB", "time": "1:50 PM"}
+    ],
+    "must_carry": ["Calculator"]
+  },
+  "TUESDAY": {
+    "morning": [
+      {"subject": "CRT (@411)", "time": "9:30 AM"},
+      {"subject": "PPSUC", "time": "11:10 AM"}
+    ],
+    "afternoon": [
+      {"subject": "CHE", "time": "1:00 PM"},
+      {"subject": "BEEE", "time": "1:50 PM"},
+      {"subject": "IOT", "time": "2:40 PM"}
+    ],
+    "must_carry": ["Laptop"]
+  },
+  "WEDNESDAY": {
+    "morning": [
+      {"subject": "BEEE", "time": "9:30 AM"},
+      {"subject": "ACS", "time": "10:20 AM"},
+      {"subject": "EM", "time": "11:10 AM"}
+    ],
+    "afternoon": [
+      {"subject": "TD", "time": "1:00 PM"},
+      {"subject": "BEEE LAB", "time": "1:50 PM"}
+    ],
+    "must_carry": ["Casio", "Apron", "Graph (if necessary)", "Cambridge empower"]
+  },
+  "THURSDAY": {
+    "morning": [
+      {"subject": "PPSC LAB", "time": "9:30 AM"}
+    ],
+    "afternoon": [
+      {"subject": "MAT", "time": "1:00 PM"},
+      {"subject": "TD", "time": "1:50 PM"},
+      {"subject": "ACS LAB", "time": "2:40 PM"}
+    ],
+    "must_carry": ["Laptop"]
+  },
+  "FRIDAY": {
+    "morning": [
+      {"subject": "MAT", "time": "9:30 AM"},
+      {"subject": "PPSUC", "time": "10:20 AM"},
+      {"subject": "BEEE", "time": "11:10 AM"}
+    ],
+    "afternoon": [
+      {"subject": "PPSUC", "time": "1:00 PM"},
+      {"subject": "CHE", "time": "1:50 PM"},
+      {"subject": "TD", "time": "2:40 PM"},
+      {"subject": "MAT", "time": "3:30 PM"}
+    ],
+    "must_carry": ["Laptop"]
+  },
+  "SATURDAY": {
+    "morning": [],
+    "afternoon": [],
+    "must_carry": [],
+    "holiday": true
+  },
+  "SUNDAY": {
+    "morning": [],
+    "afternoon": [],
+    "must_carry": [],
+    "holiday": true
+  }
 }
