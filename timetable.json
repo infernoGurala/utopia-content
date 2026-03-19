@@ -1,37 +1,32 @@
 {
-  "mon": {
+  "MONDAY": {
     "morning": [
       {
-        "subject": "matgs",
-        "time": "4:50"
+        "subject": "Maths",
+        "time": "9:30"
       }
     ],
-    "afternoon": [
-      {
-        "subject": "55",
-        "time": ""
-      }
-    ],
-    "mustCarry": []
+    "afternoon": [],
+    "must_carry": []
   },
-  "tue": {
+  "TUESDAY": {
     "morning": [],
     "afternoon": [],
-    "mustCarry": []
+    "must_carry": []
   },
-  "wed": {
+  "WEDNESDAY": {
     "morning": [],
     "afternoon": [],
-    "mustCarry": []
+    "must_carry": []
   },
-  "thu": {
+  "THURSDAY": {
     "morning": [],
     "afternoon": [],
-    "mustCarry": []
+    "must_carry": []
   },
-  "fri": {
+  "FRIDAY": {
     "morning": [],
     "afternoon": [],
-    "mustCarry": []
+    "must_carry": []
   }
 }
