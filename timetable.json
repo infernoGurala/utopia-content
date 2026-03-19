@@ -16,7 +16,7 @@
     ],
     "afternoon": [
       {
-        "subject": "TD",
+        "subject": "E.TD",
         "time": "1:00 PM"
       },
       {
@@ -25,7 +25,8 @@
       }
     ],
     "must_carry": [
-      "Calculator"
+      "Calculator",
+      "graphs"
     ]
   },
   "TUESDAY": {
@@ -150,18 +151,5 @@
     "must_carry": [
       "Laptop"
     ]
-  },
-  "SATURDAY": {
-    "morning": [],
-    "afternoon": [],
-    "must_carry": [],
-    "holiday": true
-  },
-  "SUNDAY": {
-    "morning": [],
-    "afternoon": [],
-    "must_carry": [],
-    "holiday": true
-  },
-  "holiday": true
+  }
 }
