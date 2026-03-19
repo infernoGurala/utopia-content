@@ -1,3 +1,5 @@
+### RESOURCES
+
 <span style="color: #636363">Basic Electrical and Electronics engineering (BEEE) - 2501EE01 - MDC</span>
 
 <a href="https://drive.google.com/drive/folders/1QbAGe16PNA6xzyhyRC_qpx7j89PLm7Ak" style="color: #20E69A !important">LAB MANUAL</a>
