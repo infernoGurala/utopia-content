@@ -1,0 +1,103 @@
+name: Writer Broadcast
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Notification title'
+        required: true
+      message:
+        description: 'Notification message'
+        required: true
+      sender:
+        description: 'Sender name'
+        required: true
+
+jobs:
+  send_broadcast:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version: '24'
+
+      - name: Install Firebase Admin SDK
+        run: npm install firebase-admin
+
+      - name: Send broadcast notification
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          BROADCAST_TITLE: ${{ github.event.inputs.title }}
+          BROADCAST_MESSAGE: ${{ github.event.inputs.message }}
+          BROADCAST_SENDER: ${{ github.event.inputs.sender }}
+        run: |
+          node << 'EOF'
+          const admin = require('firebase-admin');
+
+          const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+          admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount),
+            projectId: process.env.FIREBASE_PROJECT_ID,
+          });
+
+          const db = admin.firestore();
+
+          async function sendBroadcast() {
+            try {
+              const title = process.env.BROADCAST_TITLE;
+              const message = process.env.BROADCAST_MESSAGE;
+              const sender = process.env.BROADCAST_SENDER;
+
+              console.log(`Broadcasting: "${title}" from ${sender}`);
+
+              // Get all FCM tokens
+              const usersSnapshot = await db.collection('users').get();
+              const tokens = [];
+              usersSnapshot.forEach(doc => {
+                const token = doc.data().fcmToken;
+                if (token) tokens.push(token);
+              });
+
+              console.log(`Sending to ${tokens.length} devices...`);
+              if (tokens.length === 0) {
+                console.log('No tokens found. Exiting.');
+                return;
+              }
+
+              const chunkSize = 500;
+              for (let i = 0; i < tokens.length; i += chunkSize) {
+                const chunk = tokens.slice(i, i + chunkSize);
+                const fcmMessage = {
+                  notification: {
+                    title: `📢 ${title}`,
+                    body: `${message}\n— ${sender}`,
+                  },
+                  data: {
+                    type: 'broadcast',
+                    sender: sender,
+                  },
+                  android: {
+                    priority: 'high',
+                    notification: {
+                      sound: 'default',
+                    },
+                  },
+                  tokens: chunk,
+                };
+
+                const response = await admin.messaging().sendEachForMulticast(fcmMessage);
+                console.log(`Sent: ${response.successCount} success, ${response.failureCount} failed`);
+              }
+
+              console.log('Broadcast complete!');
+            } catch (err) {
+              console.error('Error:', err);
+              process.exit(1);
+            }
+          }
+
+          sendBroadcast();
+          EOF
