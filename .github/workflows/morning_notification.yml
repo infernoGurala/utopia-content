@@ -82,13 +82,14 @@ jobs:
               const quote = getRandomQuote(quotesData.quotes);
 
               const usersSnapshot = await db.collection('users').get();
-              const tokens = [];
+              const tokenSet = new Set();
               usersSnapshot.forEach(doc => {
                 const token = doc.data().fcmToken;
-                if (token) tokens.push(token);
+                if (token) tokenSet.add(token);
               });
+              const tokens = Array.from(tokenSet);
+              console.log(`Found ${tokens.length} unique tokens from ${usersSnapshot.size} users`);
 
-              console.log(`Sending to ${tokens.length} devices...`);
               if (tokens.length === 0) {
                 console.log('No tokens found. Exiting.');
                 return;
@@ -131,7 +132,6 @@ jobs:
                 body = bodyParts.join('\n\n');
               }
 
-              // Single send only — no duplicate calls
               const chunkSize = 500;
               for (let i = 0; i < tokens.length; i += chunkSize) {
                 const chunk = tokens.slice(i, i + chunkSize);
