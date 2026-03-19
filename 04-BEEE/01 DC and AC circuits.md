@@ -1,3 +1,7 @@
+### NOTES
+
+[PDF document](https://drive.google.com/file/d/1RPjeKUM5DlcoXYqSMf4e0zUTL8rs0X-I/view?usp=drive_link)
+
 ---
 
 ---
@@ -8,7 +12,7 @@
 
 ---
 
-gdjdjdkdjd
+
 
 ## Unit 1
 
