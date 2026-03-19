@@ -1,7 +1,3 @@
-### NOTES
-
-[PDF of lesson](https://drive.google.com/file/d/16-qyrixzj4ocFNDGDvO73DMe75VBGoYB/view?usp=drivesdk)
-
 ---
 # ASSIGNMENT QUESTIONS:
 
@@ -16,3 +12,4 @@
  9. What is brackish water? Describe Electrodialysis with diagram?
 10. A water sample contains: Ca(HCO3)2 = 162 mg/L, Mg(HCO3)2 = 146 mg/L. Calculate Total hardness in mg/L as CaCO3, Amount of NaCl required for regeneration if 10,000 L water is treated.
 
+ I raa jhon
