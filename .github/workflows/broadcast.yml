@@ -53,15 +53,15 @@ jobs:
 
               console.log(`Broadcasting: "${title}" from ${sender}`);
 
-              // Get all FCM tokens
               const usersSnapshot = await db.collection('users').get();
-              const tokens = [];
+              const tokenSet = new Set();
               usersSnapshot.forEach(doc => {
                 const token = doc.data().fcmToken;
-                if (token) tokens.push(token);
+                if (token) tokenSet.add(token);
               });
+              const tokens = Array.from(tokenSet);
+              console.log(`Found ${tokens.length} unique tokens from ${usersSnapshot.size} users`);
 
-              console.log(`Sending to ${tokens.length} devices...`);
               if (tokens.length === 0) {
                 console.log('No tokens found. Exiting.');
                 return;
@@ -101,3 +101,10 @@ jobs:
 
           sendBroadcast();
           EOF
+```
+
+---
+
+Commit both → trigger **Send Morning Notification Now** → check Actions log for:
+```
+Found X unique tokens from Y users
