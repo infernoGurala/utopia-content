@@ -2,7 +2,7 @@ name: Morning Notification
 
 on:
   schedule:
-    # 7:00 AM IST = 1:30 AM UTC
+    # 5:00 AM IST = 11:30 PM UTC (previous day)
     - cron: '30 23 * * *'
   workflow_dispatch:
 
@@ -131,6 +131,7 @@ jobs:
                 body = bodyParts.join('\n\n');
               }
 
+              // Single send only — no duplicate calls
               const chunkSize = 500;
               for (let i = 0; i < tokens.length; i += chunkSize) {
                 const chunk = tokens.slice(i, i + chunkSize);
