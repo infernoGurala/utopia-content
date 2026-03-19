@@ -65,8 +65,11 @@ jobs:
 
           async function sendMorningNotification() {
             try {
-              const timetable = JSON.parse(fs.readFileSync('timetable.json', 'utf8'));
-              const quotesData = JSON.parse(fs.readFileSync('quotes.json', 'utf8'));
+              const workdir = process.env.GITHUB_WORKSPACE || '.';
+
+              const timetable = JSON.parse(fs.readFileSync(`${workdir}/timetable.json`, 'utf8'));
+              const quotesData = JSON.parse(fs.readFileSync(`${workdir}/quotes.json`, 'utf8'));
+              const override = JSON.parse(fs.readFileSync(`${workdir}/morning_notif.json`, 'utf8'));
 
               const today = getTodayDay();
               const dateStr = getDateString();
@@ -74,10 +77,8 @@ jobs:
 
               console.log(`Today is ${today}`);
 
-              const override = JSON.parse(fs.readFileSync('morning_notif.json', 'utf8'));
               const isHoliday = dayData.holiday || override.holiday;
               const holidayNote = override.holiday_note || '';
-
               const quote = getRandomQuote(quotesData.quotes);
 
               const usersSnapshot = await db.collection('users').get();
