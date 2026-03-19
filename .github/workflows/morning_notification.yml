@@ -1,0 +1,128 @@
+name: Morning Notification
+
+on:
+  schedule:
+    # 7:00 AM IST = 1:30 AM UTC
+    - cron: '30 1 * * *'
+  workflow_dispatch: # allows manual trigger for testing
+
+jobs:
+  send_notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout content repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Firebase Admin SDK
+        run: npm install firebase-admin
+
+      - name: Send morning notification
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        run: |
+          node << 'EOF'
+          const admin = require('firebase-admin');
+          const fs = require('fs');
+
+          // Initialize Firebase
+          const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+          admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount),
+            projectId: process.env.FIREBASE_PROJECT_ID,
+          });
+
+          const db = admin.firestore();
+
+          async function sendMorningNotification() {
+            try {
+              // Read morning_notif.json from repo
+              const raw = fs.readFileSync('morning_notif.json', 'utf8');
+              const notif = JSON.parse(raw);
+
+              // Skip if holiday
+              if (notif.holiday) {
+                console.log('Holiday today:', notif.holiday_note || 'No classes');
+                // Still send a holiday notification
+              }
+
+              // Build notification body
+              let scheduleText = '';
+              if (notif.holiday) {
+                scheduleText = notif.holiday_note || 'No classes today!';
+              } else {
+                scheduleText = notif.schedule
+                  .map(s => `${s.subject} at ${s.time}`)
+                  .join(', ');
+              }
+
+              const mustCarry = notif.must_carry.join(', ');
+              const body = notif.holiday
+                ? `🎉 ${scheduleText}`
+                : `📚 ${scheduleText} | 🎒 Carry: ${mustCarry}`;
+
+              // Get all FCM tokens from Firestore
+              const usersSnapshot = await db.collection('users').get();
+              const tokens = [];
+              usersSnapshot.forEach(doc => {
+                const token = doc.data().fcmToken;
+                if (token) tokens.push(token);
+              });
+
+              console.log(`Sending to ${tokens.length} devices...`);
+
+              if (tokens.length === 0) {
+                console.log('No tokens found. Exiting.');
+                return;
+              }
+
+              // Send in batches of 500 (FCM limit)
+              const chunkSize = 500;
+              for (let i = 0; i < tokens.length; i += chunkSize) {
+                const chunk = tokens.slice(i, i + chunkSize);
+                const message = {
+                  notification: {
+                    title: notif.holiday ? '🏖️ Holiday Today!' : '☀️ Good Morning, UTOPIA',
+                    body: body,
+                  },
+                  data: {
+                    type: 'morning_notification',
+                    date: notif.date,
+                    quote: notif.quote,
+                  },
+                  tokens: chunk,
+                };
+
+                const response = await admin.messaging().sendEachForMulticast(message);
+                console.log(`Sent: ${response.successCount} success, ${response.failureCount} failed`);
+              }
+
+              // Send quote as second notification
+              if (notif.quote) {
+                const quoteMessage = {
+                  notification: {
+                    title: '💭 Quote of the Day',
+                    body: notif.quote,
+                  },
+                  data: { type: 'quote' },
+                  tokens: tokens.slice(0, 500),
+                };
+                await admin.messaging().sendEachForMulticast(quoteMessage);
+                console.log('Quote notification sent.');
+              }
+
+              console.log('Morning notification complete!');
+            } catch (err) {
+              console.error('Error:', err);
+              process.exit(1);
+            }
+          }
+
+          sendMorningNotification();
+          EOF
