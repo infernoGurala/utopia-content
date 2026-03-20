@@ -5,15 +5,11 @@ title: University Docs
 
 [**Curriculum**](https://drive.google.com/file/d/1JJ4mRHWu9icEslDKrllrnZf3cPSFCMG3/view)
 
----
 
 [**Regulations R-25**](https://drive.google.com/file/d/1f-5LLmBjxcSPtKn8IzAI-jH73-gH7LqV/view)
 
----
 
 [Program Structure](https://adityauniversity.in/curriculum-view/attachment-1764738827153.pdf)
-
----
 
 [Major Core Courses (MCC)](https://adityauniversity.in/curriculum-view/attachment-1764738849081.pdf)
 
