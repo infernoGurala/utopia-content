@@ -1,11 +1,9 @@
-  name: Chat Notification
+ name: Chat Notification
 
   on:
     workflow_dispatch:
       inputs:
         chat_id:
-          required: true
-          type: string
           description: Chat document ID
           required: true
           type: string
