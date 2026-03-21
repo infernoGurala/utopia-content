@@ -9,6 +9,8 @@
 
 2. Verify the KCL to the given circuit `4M`
    ![circuit](<Pasted image 20260315135717.png>)
+
+
 3. Kirchhoff's laws with examples `4M`
 4. DC and AC `4M`
 5. Define the following parameters `4M`
