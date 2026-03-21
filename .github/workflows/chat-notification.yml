@@ -1,6 +1,6 @@
 name: Chat Notification
 
-  on:
+  "on":
     workflow_dispatch:
       inputs:
         chat_id:
@@ -34,7 +34,7 @@ name: Chat Notification
         - name: Setup Node
           uses: actions/setup-node@v4
           with:
-            node-version: '20'
+            node-version: "20"
 
         - name: Install Google Auth Library
           run: npm install google-auth-library
@@ -50,7 +50,7 @@ name: Chat Notification
             MESSAGE_TEXT: ${{ inputs.message_text }}
           run: |
             node <<'EOF'
-            const {GoogleAuth} = require('google-auth-library');
+            const { GoogleAuth } = require('google-auth-library');
 
             async function run() {
               const credentialsJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
@@ -70,6 +70,7 @@ name: Chat Notification
                 credentials,
                 scopes: ['https://www.googleapis.com/auth/firebase.messaging'],
               });
+
               const client = await auth.getClient();
               const accessTokenResponse = await client.getAccessToken();
               const accessToken =
@@ -87,7 +88,7 @@ name: Chat Notification
                   headers: {
                     Authorization: `Bearer ${accessToken}`,
                   },
-                },
+                }
               );
 
               if (!userResponse.ok) {
@@ -132,14 +133,12 @@ name: Chat Notification
                       },
                     },
                   }),
-                },
+                }
               );
 
               if (!notificationResponse.ok) {
                 const errorText = await notificationResponse.text();
-                throw new Error(
-                  `FCM send failed: ${notificationResponse.status} ${errorText}`,
-                );
+                throw new Error(`FCM send failed: ${notificationResponse.status} ${errorText}`);
               }
 
               console.log('Chat notification sent successfully.');
