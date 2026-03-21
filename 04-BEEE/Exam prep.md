@@ -6,6 +6,7 @@
 ## Unit 1
 
 1. What is Power Factor? What is its significance? `4M`
+
 2. Verify the KCL to the given circuit `4M`
    ![[Pasted image 20260315135717.png|200]]
 3. Kirchhoff's laws with examples `4M`
