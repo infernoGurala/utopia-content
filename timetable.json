@@ -151,5 +151,17 @@
     "must_carry": [
       "Laptop"
     ]
+  },
+  "SATURDAY": {
+    "holiday": true,
+    "morning": [],
+    "afternoon": [],
+    "must_carry": []
+  },
+  "SUNDAY": {
+    "holiday": true,
+    "morning": [],
+    "afternoon": [],
+    "must_carry": []
   }
 }
