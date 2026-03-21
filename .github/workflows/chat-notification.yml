@@ -1,32 +1,28 @@
- name: Chat Notification
+name: Chat Notification
 
   on:
     workflow_dispatch:
       inputs:
         chat_id:
-          description: Chat document ID
+          description: "Chat document ID"
           required: true
-          type: string
         sender_id:
-          description: Sender UID
+          description: "Sender UID"
           required: true
-          type: string
         sender_name:
-          description: Sender display name
+          description: "Sender display name"
           required: true
-          type: string
         recipient_id:
-          description: Recipient UID
+          description: "Recipient UID"
           required: true
-          type: string
         message_text:
-          description: Message preview
+          description: "Message preview"
           required: true
-          type: string
 
   jobs:
     send:
       runs-on: ubuntu-latest
+
       steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -43,11 +39,11 @@
           env:
             FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
             PROJECT_ID: utopia-app-33cf8
-            CHAT_ID: ${{ inputs.chat_id }}
-            SENDER_ID: ${{ inputs.sender_id }}
-            SENDER_NAME: ${{ inputs.sender_name }}
-            RECIPIENT_ID: ${{ inputs.recipient_id }}
-            MESSAGE_TEXT: ${{ inputs.message_text }}
+            CHAT_ID: ${{ github.event.inputs.chat_id }}
+            SENDER_ID: ${{ github.event.inputs.sender_id }}
+            SENDER_NAME: ${{ github.event.inputs.sender_name }}
+            RECIPIENT_ID: ${{ github.event.inputs.recipient_id }}
+            MESSAGE_TEXT: ${{ github.event.inputs.message_text }}
           run: |
             node <<'EOF'
             const { GoogleAuth } = require('google-auth-library');
@@ -97,6 +93,7 @@
 
               const userDoc = await userResponse.json();
               const token = userDoc.fields?.fcmToken?.stringValue;
+
               if (!token) {
                 console.log('Recipient has no FCM token. Skipping send.');
                 return;
