@@ -20,7 +20,7 @@
 9. Find the Equivalent resistance & total current to the given circuit `4M`
    ![circuit](Pasted image 20260315160448.png)
 10. Find ix for the given circuit `4M`
-    ![[Pasted image 20260315160619.png]]
+    ![circuit](Pasted image 20260315160619.png)
 11. I(t) = 2 sin(5t - 45°) Find Magnitude, Frequency, Time Period, RMS Value, Average value & Phase Angle `4M`
 
 ---
