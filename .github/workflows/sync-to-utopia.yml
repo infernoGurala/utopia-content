@@ -8,13 +8,14 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout utopia-content
         uses: actions/checkout@v4
         with:
           path: utopia-content
 
-      - name: Checkout utopia (v4 branch)
+      - name: Checkout utopia v4 branch
         uses: actions/checkout@v4
         with:
           repository: infernoGurala/utopia
@@ -30,7 +31,7 @@ jobs:
             --exclude='.obsidian' \
             utopia-content/ utopia/content/
 
-      - name: Commit and push changes
+      - name: Commit and push
         working-directory: utopia
         run: |
           git config user.name "github-actions[bot]"
@@ -38,18 +39,3 @@ jobs:
           git add content/
           git diff --staged --quiet || git commit -m "sync: update content from utopia-content"
           git push
-```
-
----
-
-## How it works
-```
-You push to utopia-content (main)
-        ↓
-GitHub Actions triggers
-        ↓
-Checks out both repos
-        ↓
-rsync copies everything → utopia/content/ (v4 branch)
-        ↓
-Auto-commits & pushes to utopia
