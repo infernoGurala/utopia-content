@@ -7,7 +7,7 @@ date: 2025-03-15
 status: active
 priority: high
 rating: 4
-progress: 0.65
+progress: 0.66
 ---
 
 # Obsidian feature test — master template
