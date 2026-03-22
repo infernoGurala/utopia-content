@@ -1,0 +1,55 @@
+name: Sync to utopia/content
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout utopia-content
+        uses: actions/checkout@v4
+        with:
+          path: utopia-content
+
+      - name: Checkout utopia (v4 branch)
+        uses: actions/checkout@v4
+        with:
+          repository: infernoGurala/utopia
+          ref: v4
+          token: ${{ secrets.UTOPIA_SYNC_TOKEN }}
+          path: utopia
+
+      - name: Sync content folder
+        run: |
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.obsidian' \
+            utopia-content/ utopia/content/
+
+      - name: Commit and push changes
+        working-directory: utopia
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/
+          git diff --staged --quiet || git commit -m "sync: update content from utopia-content"
+          git push
+```
+
+---
+
+## How it works
+```
+You push to utopia-content (main)
+        ↓
+GitHub Actions triggers
+        ↓
+Checks out both repos
+        ↓
+rsync copies everything → utopia/content/ (v4 branch)
+        ↓
+Auto-commits & pushes to utopia
