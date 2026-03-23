@@ -6,4 +6,4 @@
 # Bugs
 
 1. attedance calculation fix for attend class.
-2. 
+2. friends chat, must sync in the chat pannel.. 
