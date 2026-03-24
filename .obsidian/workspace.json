@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NonExactDE.md",
+                "file": "16-Other/EXTRA/MATHS answers/Unit-1/Linear Differential Equation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NonExactDE"
+              "title": "Linear Differential Equation"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "5c7802ab54ad95c2",
@@ -186,10 +185,10 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
+    "NonExactDE.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/Exactness.md",
     "03-DEVC/01 First Order ODEs.md",
     "09-PPSUC/Exam Prep.md",
-    "NonExactDE.md",
     "16-Other/EXTRA/MATHS answers/Unit-2",
     "16-Other/EXTRA/MATHS answers/Unit-1/Linear Differential Equation.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/M01Q10.1.jpg",

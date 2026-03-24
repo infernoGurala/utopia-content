@@ -11,7 +11,7 @@ $$
 **Standard Form**  
 Convert equation to:  
 $$  
-\frac{d(Dependent)}{d(InDependent)} + P_{(InDependent)}(Dependent) = Q_{(InDependent)}  
+\frac{d(Dep)}{d(InD)} + P_{(InD)}(Dep) = Q_{(InD)}  
 $$
   
  **Step 1 — Identify**  
@@ -27,5 +27,5 @@ $$
   
  **Step 3 — General solution**  
 $$  
- IF \cdot InDependent =\int IF. Q_{(InDependent)}.d(independent)+C
+ IF \cdot Dep =\int IF. Q_{(InD)}.d(ind)+C
 $$  
