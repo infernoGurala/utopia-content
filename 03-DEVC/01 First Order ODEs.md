@@ -58,7 +58,7 @@ $$\frac{dy}{dx} + \frac{y \cos x + \sin y + y}{\sin x + x \cos y + x} = 0$$
 **Q8** — Solve: `4M`  
 $$(x^2 y - 2xy^2)\, dx - (x^3 - 3x^2 y)\, dy = 0$$
 ![Answer](M01Q08.jpg)
-![Answer](M01Q0.jpg)
+![Answer](M01Q09.jpg)
 
 ---
 
