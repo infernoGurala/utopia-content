@@ -5,7 +5,7 @@ $$
   
 ---  
   
-## Step 1 — Check Exactness  
+ **Step 1 — Check Exactness**  
 Condition:  
 $$  
 \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}  
@@ -16,7 +16,7 @@ $$
   If not exact follow [[NonExactDE]]
 ---  
   
-## Step 2 — General soultion \(y\)  
+**Step 2 — General soultion \(y\)**  
 $$  
 y = \int M\,dx + \int (\text{terms in } N \text{ free of } x)\,dy = C  
 $$  
