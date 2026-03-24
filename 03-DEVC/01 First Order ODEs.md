@@ -26,7 +26,7 @@ $$\frac{dy}{dx} + 2y = e^x + x,\quad y(0) = 1$$
 
 **Q3** — Solve: `4M`  *(Linear DE)*
 $$dr + (2r \cot \theta + \sin 2\theta)\, d\theta = 0$$
-
+![[M01Q03.jpg]]
 ---
 
 **Q4** — Solve: `4M`  *(Linear DE)*
