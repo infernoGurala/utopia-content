@@ -12,23 +12,23 @@
 ---
 # Questions
 
-**Q1** — Solve: `4M`  
+**Q1** — Solve: `4M`  *(Linear DE)*
 $$\frac{dy}{dx} + \frac{y}{x \log x} = \frac{\sin 2x}{\log x}$$
 [Answer](M01Q01.jpeg)
 
 ---
 
-**Q2** — Solve: `4M`  
+**Q2** — Solve: `4M`  *(Linear DE)*
 $$\frac{dy}{dx} + 2y = e^x + x,\quad y(0) = 1$$
 
 ---
 
-**Q3** — Solve: `4M`  
+**Q3** — Solve: `4M`  *(Linear DE)*
 $$dr + (2r \cot \theta + \sin 2\theta)\, d\theta = 0$$
 
 ---
 
-**Q4** — Solve: `4M`  
+**Q4** — Solve: `4M`  *(Linear DE)*
 $$(1 + y^2)\, dx = (\tan^{-1} y - x)\, dy$$
 
 ---
