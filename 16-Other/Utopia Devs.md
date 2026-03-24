@@ -5,5 +5,5 @@
 
 # Bugs
 
-1. attedance calculation fix for attend class.
-2. friends chat, must sync in the chat pannel.. 
+1. Single latex Module addon
+2. scroll bug in heavy Latex, glitch. 
