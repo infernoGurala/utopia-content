@@ -6,18 +6,18 @@
 
 ---
 
-**Q1** — State and explain the First Law of Thermodynamics for a closed system undergoing a cyclic process. `8M`
+**Q1** — State and explain the First Law of Thermodynamics for a closed system undergoing a cyclic process. `4M`
 
 ---
 
-**Q2** — Define the following terms: `8M`
+**Q2** — Define the following terms: `4M`
 1. Joule's Experiment
 2. Energy in State
 3. Energy in Transition
 
 ---
 
-**Q3** — Explain the following terms: `8M`
+**Q3** — Explain the following terms: `4M`
 1. Point function
 2. Path function
 3. Enthalpy
@@ -45,6 +45,6 @@
 
 ---
 
-**Q8** — Air flows steadily at the rate of $0.5\ \text{kg/s}$ through an air compressor, entering at $7\ \text{m/s}$ velocity, $100\ \text{kPa}$ pressure, and $0.95\ \text{m}^3/\text{kg}$ volume, and leaving at $5\ \text{m/s}$, $700\ \text{kPa}$, and $0.19\ \text{m}^3/\text{kg}$. The internal energy of the air leaving is $90\ \text{kJ/kg}$ greater than that of the air entering. Cooling water in the compressor jackets absorbs heat from the air at the rate of $58\ \text{kW}$. `8M`
+**Q8** — Air flows steadily at the rate of $0.5\ \text{kg/s}$ through an air compressor, entering at $7\ \text{m/s}$ velocity, $100\ \text{kPa}$ pressure, and $0.95\ \text{m}^3/\text{kg}$ volume, and leaving at $5\ \text{m/s}$, $700\ \text{kPa}$, and $0.19\ \text{m}^3/\text{kg}$. The internal energy of the air leaving is $90\ \text{kJ/kg}$ greater than that of the air entering. Cooling water in the compressor jackets absorbs heat from the air at the rate of $58\ \text{kW}$. `4M` or `8M`
 - (a) Compute the rate of shaft work input to the air in kW.
 - (b) Find the ratio of the inlet pipe diameter to outlet pipe diameter.

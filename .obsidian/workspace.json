@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10-IOT/index.md",
+                "file": "02-Thermodynamics/02 First Law.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "02 First Law"
             }
           }
         ]
@@ -183,8 +183,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "6ef931e536391d25",
+  "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
+    "02-Thermodynamics/01 Introduction.md",
+    "02-Thermodynamics/02 First Law.md",
+    "02-Thermodynamics/index.md",
+    "02-Thermodynamics/05 Refrigerator & AC.md",
+    "02-Thermodynamics/Exam prep.md",
+    "10-IOT/index.md",
     "11-LAB/Chemistry.md",
     "11-LAB/BEEE.md",
     "04-BEEE/index.md",
