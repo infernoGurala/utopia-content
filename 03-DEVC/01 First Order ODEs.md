@@ -11,7 +11,7 @@
 
 ---
 ### Concept
-[[M01Concept01|Linear DE]]
+[[M01Concept01]]
 
 ---
 
