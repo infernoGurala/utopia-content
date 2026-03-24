@@ -12,7 +12,7 @@
 ---
 ### Concept
 - [[Linear Differential Equation]]
-- 
+- [[Exactness]]
 ---
 
 # Questions

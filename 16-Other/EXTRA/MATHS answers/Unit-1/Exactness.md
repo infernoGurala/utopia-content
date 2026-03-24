@@ -16,7 +16,7 @@ $$
   If not exact follow [[NonExactDE]]
 ---  
   
-## Step 3 — General soultion \(y\)  
+## Step 2 — General soultion \(y\)  
 $$  
 y = \int M\,dx + \int (\text{terms in } N \text{ free of } x)\,dy = C  
 $$  
