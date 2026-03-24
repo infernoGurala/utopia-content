@@ -19,6 +19,6 @@ $$
 **Step 2 — General soultion \(y\)**  
 $$  
 y=\int M\,dx + \int (\text{non-x in N})\,dy+C  
-$$  
+$$  y-const in M dx
   
   
