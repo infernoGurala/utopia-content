@@ -18,7 +18,7 @@ $$
   
 **Step 2 — General soultion \(y\)**  
 $$  
-y=\int M\,dx + \int (\text{terms in }N \text{ free of } x)\,dy+C  
+y=\int M\,dx + \int (\text{non-x in N})\,dy+C  
 $$  
   
   
