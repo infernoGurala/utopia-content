@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04-BEEE/Exam prep.md",
+                "file": "03-DEVC/01 First Order ODEs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exam prep"
+              "title": "01 First Order ODEs"
             }
           }
         ]
@@ -185,6 +185,14 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
+    "03-DEVC/02 Higher Order ODEs.md",
+    "03-DEVC/03 Partial DEs.md",
+    "03-DEVC/04 Vector Diff.md",
+    "03-DEVC/05 Vector Int.md",
+    "03-DEVC/01 First Order ODEs.md",
+    "03-DEVC/Exam Prep.md",
+    "04-BEEE/Exam prep.md",
+    "Download.md",
     "04-BEEE/index.md",
     "04-BEEE/01 DC and AC circuits.md"
   ]
