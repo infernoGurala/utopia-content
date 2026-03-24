@@ -37,39 +37,39 @@ $$(1 + y^2)\, dx = (\tan^{-1} y - x)\, dy$$
 
 ---
 
-**Q5** — Solve: `4M`  
+**Q5** — Solve: `4M`  *(Exactness)*
 $$(2xy + y - \tan y)\, dx + (x^2 - x \tan^2 y + \sec^2 y)\, dy = 0$$
 ![Answer](M01Q05.jpg)
 
 ---
 
-**Q6** — Solve: `4M`  
+**Q6** — Solve: `4M`  *(Exactness)*
 $$(y^2 e^{xy^2} + 4x^3)\, dx + (2xy e^{xy^2} - 3y^2)\, dy = 0$$
 ![Answer](M01Q06.jpg)
 
 ---
 
-**Q7** — Solve: `4M`  
+**Q7** — Solve: `4M`  *(Exactness)*
 $$\frac{dy}{dx} + \frac{y \cos x + \sin y + y}{\sin x + x \cos y + x} = 0$$
 ![Answer](M01Q07.jpg)
 
 ---
 
-**Q8** — Solve: `4M`  
+**Q8** — Solve: `4M`  *(Exactness)*
 $$(x^2 y - 2xy^2)\, dx - (x^3 - 3x^2 y)\, dy = 0$$
 ![Answer](M01Q08.jpg)
 ![Answer](M01Q09.jpg)
 
 ---
 
-**Q9** — Solve: `4M`  
+**Q9** — Solve: `4M`  *(Exactness)*
 $$y(xy \sin xy + \cos xy)\, dx + x(xy \sin xy - \cos xy)\, dy = 0$$
 ![Answer](M01Q09.jpg)
 ![Answer](M01Q09.1.jpg)
 
 ---
 
-**Q10** — Solve: `4M`
+**Q10** — Solve: `4M` *(Exactness)*
 $$\frac{dy}{dx} = \frac{x^2 + y^2 + 1}{2xy}$$
 ![Answer](M01Q10.jpg)
 ![Answer](M01Q10.1.jpg)

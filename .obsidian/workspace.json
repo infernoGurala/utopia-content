@@ -15,7 +15,7 @@
               "state": {
                 "file": "03-DEVC/01 First Order ODEs.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "01 First Order ODEs"
