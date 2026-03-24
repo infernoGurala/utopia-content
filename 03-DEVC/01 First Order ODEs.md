@@ -87,8 +87,10 @@ $$\frac{x^2}{a^2 + \lambda} + \frac{y^2}{b^2 + \lambda} = 1$$
 ---
 
 **Q15** — Find orthogonal trajectories: `4M`  
-(i) $$r = a(1 - \cos \theta)$$ 
-(ii) $$r = 2a(\cos \theta + \sin \theta)$$
+(i) 
+$$r = a(1 - \cos \theta)$$ 
+(ii) 
+$$r = 2a(\cos \theta + \sin \theta)$$
 
 ---
 
