@@ -13,7 +13,7 @@
 # Questions
 
 **Q1** — Solve: `4M`  
-$\frac{dy}{dx} + \frac{y}{x \log x} = \frac{\sin 2x}{\log x}$
+$$\frac{dy}{dx} + \frac{y}{x \log x} = \frac{\sin 2x}{\log x}$$
 ![question1](M01Q01.jpeg)
 
 ---
