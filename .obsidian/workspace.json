@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11-LAB/BEEE.md",
+                "file": "10-IOT/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BEEE"
+              "title": "index"
             }
           }
         ]
@@ -183,8 +183,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "47b8404a8c1c2a39",
+  "active": "6ef931e536391d25",
   "lastOpenFiles": [
+    "11-LAB/Chemistry.md",
+    "11-LAB/BEEE.md",
     "04-BEEE/index.md",
     "04-BEEE/Exam prep.md",
     "03-DEVC/01 First Order ODEs.md",
