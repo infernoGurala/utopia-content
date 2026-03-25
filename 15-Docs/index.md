@@ -1,7 +1,6 @@
 ---
 title: University Docs
 ---
-### NOTES
 [Academic calendar](https://drive.google.com/file/d/1wPuWDIqLnygd1cHmj3zgqPjMTcRKgFVZ/view?usp=sharing)
 
 [Curriculum](https://drive.google.com/file/d/1JJ4mRHWu9icEslDKrllrnZf3cPSFCMG3/view)
