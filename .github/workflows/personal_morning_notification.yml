@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Install Firebase Admin SDK
+        run: npm install firebase-admin
+
       - name: Send personal morning notification
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
