@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "15-Docs/University/index.md",
+                "file": "Download.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Download"
             }
           }
         ]
@@ -185,6 +185,7 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
+    "15-Docs/University/index.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/new.png",
     "16-Other/EXTRA/MATHS answers/Unit-1/fav (1).png",
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 593414.crdownload",
@@ -194,7 +195,6 @@
     "16-Other/EXTRA/MATHS answers/Unit-1/unnamed.jpg",
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 420382.crdownload",
     "15-Docs/index.md",
-    "15-Docs/University/index.md",
     "NonExactDE.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/Linear Differential Equation.md",
     "15-Docs/University",
@@ -212,7 +212,6 @@
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 716773.crdownload",
     "16-Other/EXTRA/MATHS answers/Unit-1/M01Q08.jpg",
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 857546.crdownload",
-    "16-Other/EXTRA/MATHS answers/Unit-1/M01Q07.jpg",
     "16-Other/EXTRA/MATHS answers/Unit-1/answers.md",
     "02-Thermodynamics/02 First Law.md",
     "02-Thermodynamics/01 Introduction.md",
