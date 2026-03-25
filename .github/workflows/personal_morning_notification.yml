@@ -1,0 +1,156 @@
+name: Personal Morning Notification
+
+on:
+  workflow_dispatch:
+    inputs:
+      uid:
+        description: 'Target user UID'
+        required: true
+
+jobs:
+  send_personal_morning_notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout content repo
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version: '24'
+
+      - name: Send personal morning notification
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          TARGET_UID: ${{ github.event.inputs.uid }}
+        run: |
+          node << 'EOF_NODE'
+          const admin = require('firebase-admin');
+          const fs = require('fs');
+
+          const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+          admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount),
+            projectId: process.env.FIREBASE_PROJECT_ID,
+          });
+
+          const db = admin.firestore();
+
+          function getTodayDay() {
+            const now = new Date();
+            const istOffset = 5.5 * 60 * 60 * 1000;
+            const istDate = new Date(now.getTime() + istOffset);
+            const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+            return days[istDate.getUTCDay()];
+          }
+
+          function getDateString() {
+            const now = new Date();
+            const istOffset = 5.5 * 60 * 60 * 1000;
+            const istDate = new Date(now.getTime() + istOffset);
+            const day = istDate.getUTCDate().toString().padStart(2, '0');
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const month = months[istDate.getUTCMonth()];
+            const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const weekday = weekdays[istDate.getUTCDay()];
+            return `${day} ${month} | ${weekday}`;
+          }
+
+          function getRandomQuote(quotes) {
+            return quotes[Math.floor(Math.random() * quotes.length)];
+          }
+
+          async function sendPersonalMorningNotification() {
+            try {
+              const uid = (process.env.TARGET_UID || '').trim();
+              if (!uid) {
+                throw new Error('TARGET_UID is required.');
+              }
+
+              const workdir = process.env.GITHUB_WORKSPACE || '.';
+              const timetable = JSON.parse(fs.readFileSync(`${workdir}/timetable.json`, 'utf8'));
+              const quotesData = JSON.parse(fs.readFileSync(`${workdir}/quotes.json`, 'utf8'));
+              const override = JSON.parse(fs.readFileSync(`${workdir}/morning_notif.json`, 'utf8'));
+
+              const today = getTodayDay();
+              const dateStr = getDateString();
+              const dayData = timetable[today] || {morning: [], afternoon: [], must_carry: [], holiday: false};
+              const isHoliday = dayData.holiday || override.holiday;
+              const holidayNote = override.holiday_note || '';
+              const quote = getRandomQuote(quotesData.quotes || ['Have a productive day.']);
+
+              let title = '';
+              let body = '';
+
+              if (isHoliday) {
+                title = '🏖️ Holiday Today!';
+                body = holidayNote
+                  ? `${holidayNote}\n\n📖 ${quote}`
+                  : `No classes today! Enjoy your day.\n\n📖 ${quote}`;
+              } else {
+                title = `☀️ Good Morning | ${dateStr}`;
+                const bodyParts = [];
+
+                if (Array.isArray(dayData.morning) && dayData.morning.length > 0) {
+                  const morningLines = dayData.morning
+                    .map((s) => `• ${s.subject} – ${s.time}`)
+                    .join('\n');
+                  bodyParts.push(`🌿 Morning Schedule:\n${morningLines}`);
+                }
+
+                if (Array.isArray(dayData.afternoon) && dayData.afternoon.length > 0) {
+                  const afternoonLines = dayData.afternoon
+                    .map((s) => `• ${s.subject} – ${s.time}`)
+                    .join('\n');
+                  bodyParts.push(`🌿 Afternoon Schedule:\n${afternoonLines}`);
+                }
+
+                if (Array.isArray(dayData.must_carry) && dayData.must_carry.length > 0) {
+                  const carryLines = dayData.must_carry
+                    .map((item) => `🔵 ${item}`)
+                    .join('\n');
+                  bodyParts.push(`☁️ Must Carry:\n${carryLines}`);
+                }
+
+                bodyParts.push(`📖 Quote of the day:\n${quote}`);
+                body = bodyParts.join('\n\n');
+              }
+
+              const userSnap = await db.collection('users').doc(uid).get();
+              if (!userSnap.exists) {
+                throw new Error(`User ${uid} not found.`);
+              }
+
+              const token = userSnap.data()?.fcmToken;
+              if (!token) {
+                throw new Error(`User ${uid} has no fcmToken.`);
+              }
+
+              await admin.messaging().send({
+                token,
+                notification: {title, body},
+                data: {
+                  type: 'morning_notification',
+                  date: dateStr,
+                },
+                android: {
+                  priority: 'high',
+                  notification: {
+                    sound: 'default',
+                    channelId: 'utopia_high_importance',
+                    icon: 'ic_notification',
+                  },
+                },
+              });
+
+              console.log(`Personal morning notification sent to ${uid}`);
+            } catch (err) {
+              console.error('Error:', err);
+              process.exit(1);
+            }
+          }
+
+          sendPersonalMorningNotification();
+          EOF_NODE
