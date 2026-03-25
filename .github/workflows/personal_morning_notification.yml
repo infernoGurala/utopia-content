@@ -148,6 +148,17 @@ jobs:
                 },
               });
 
+              await db.collection('notifications').add({
+                title,
+                body,
+                type: 'morning_notification',
+                receivedAt: admin.firestore.FieldValue.serverTimestamp(),
+                read: false,
+                dialogPending: true,
+                uid,
+                messageId: `personal-morning-${Date.now()}`,
+              });
+
               console.log(`Personal morning notification sent to ${uid}`);
             } catch (err) {
               console.error('Error:', err);

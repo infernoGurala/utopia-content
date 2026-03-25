@@ -82,10 +82,14 @@ jobs:
               const quote = getRandomQuote(quotesData.quotes);
 
               const usersSnapshot = await db.collection('users').get();
+              const recipients = [];
               const tokenSet = new Set();
               usersSnapshot.forEach(doc => {
                 const token = doc.data().fcmToken;
-                if (token) tokenSet.add(token);
+                if (token) {
+                  recipients.push({uid: doc.id, token});
+                  tokenSet.add(token);
+                }
               });
               const tokens = Array.from(tokenSet);
               console.log(`Found ${tokens.length} unique tokens from ${usersSnapshot.size} users`);
@@ -152,6 +156,25 @@ jobs:
 
                 const response = await admin.messaging().sendEachForMulticast(message);
                 console.log(`Sent: ${response.successCount} success, ${response.failureCount} failed`);
+              }
+
+              const batchSize = 400;
+              for (let i = 0; i < recipients.length; i += batchSize) {
+                const batch = db.batch();
+                for (const recipient of recipients.slice(i, i + batchSize)) {
+                  const ref = db.collection('notifications').doc();
+                  batch.set(ref, {
+                    title,
+                    body,
+                    type: 'morning_notification',
+                    receivedAt: admin.firestore.FieldValue.serverTimestamp(),
+                    read: false,
+                    dialogPending: true,
+                    uid: recipient.uid,
+                    messageId: `morning-${Date.now()}-${recipient.uid}`,
+                  });
+                }
+                await batch.commit();
               }
 
               console.log('Morning notification complete!');
