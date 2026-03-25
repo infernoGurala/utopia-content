@@ -9,3 +9,5 @@
 2. scroll bug in heavy Latex, glitch.
 3. notification not appearing when, clicked on the notification drawer. 
 4. notification not appearing in the notifiction bell pannel, after the update. 
+5. Add a timetable feature button.
+6. 
