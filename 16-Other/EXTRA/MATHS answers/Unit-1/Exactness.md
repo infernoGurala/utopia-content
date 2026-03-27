@@ -19,6 +19,6 @@ $$
 **Step 2 — General soultion \(y\)**  
 $$  
 y=\int M dx 
-$$  y-const in M dx
+$$
   
   
