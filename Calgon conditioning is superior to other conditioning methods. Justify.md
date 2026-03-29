@@ -14,6 +14,7 @@
 $$2Ca²⁺ + (NaPO₃)₆ → [Ca₂(PO₃)₆]²⁻$$
 
 >[!warning]  Why calgon is superior?
+
 - **Prevents scale formation** — It converts hardness causing salts into soluble complexes, preventing scale deposition inside boiler.
 - **Works at room temperature** — It works at room temperature, so no extra heating is required.
 - **Removes existing scales** — It can also remove scales that have already formed inside the boiler.
