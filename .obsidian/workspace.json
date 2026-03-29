@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03-DEVC/01 First Order ODEs.md",
+                "file": "Write the disadvantages of hard water in various fields..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 First Order ODEs"
+              "title": "Write the disadvantages of hard water in various fields."
             }
           }
         ]
@@ -185,6 +185,9 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
+    "05-Chemistry/01 Water Technology.md",
+    "Write the disadvantages of hard water in various fields..md",
+    "03-DEVC/01 First Order ODEs.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/NonExactDE.md",
     "Download.md",
     "Pasted image 20260324190916.png",
@@ -201,7 +204,6 @@
     "16-Other/EXTRA/MATHS answers/Unit-1/Linear Differential Equation.md",
     "15-Docs/University",
     "16-Other/EXTRA/MATHS answers/Unit-1/Exactness.md",
-    "03-DEVC/01 First Order ODEs.md",
     "09-PPSUC/Exam Prep.md",
     "16-Other/EXTRA/MATHS answers/Unit-2",
     "16-Other/EXTRA/MATHS answers/Unit-1/M01Q10.1.jpg",
@@ -228,7 +230,6 @@
     "03-DEVC/03 Partial DEs.md",
     "03-DEVC/04 Vector Diff.md",
     "03-DEVC/05 Vector Int.md",
-    "03-DEVC/Exam Prep.md",
-    "04-BEEE/01 DC and AC circuits.md"
+    "03-DEVC/Exam Prep.md"
   ]
 }
