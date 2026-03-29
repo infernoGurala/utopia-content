@@ -1,7 +1,7 @@
 
 > [!question] What are these specifications?
 
-**ICMR** (Indian Council of Medical Research) and **WHO** (World Health Organization) have set specific ==standards for drinking water==. These standards define the maximum acceptable limits for biological, chemical, and physical substances in water to **make it safe for human consumption.**
+**ICMR** (Indian Council of Medical Research) and **WHO** (World Health Organization) have set specific ==standards for drinking water==. These standards define the maximum acceptable limits for *biological, chemical, and physical* substances in water to **make it safe for human consumption.**
 
 
 ~~Just write some s71t u know, its just some important points, use your commonsense.~~
