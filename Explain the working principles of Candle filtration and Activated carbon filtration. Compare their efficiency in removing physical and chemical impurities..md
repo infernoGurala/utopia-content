@@ -26,7 +26,7 @@
 > [!info] Mechanism
 > Uses activated carbon filters to adsorb chemical impurities from water.
 
-![image](<twam21-04-front-low-left.jpg>)
+![reference](twam21-04-front-low-left.jpg)
 ### Advantages
 - Removes chemicals: **chlorine, pesticides, and other impurities**
 - Improves **taste and odour** of water
