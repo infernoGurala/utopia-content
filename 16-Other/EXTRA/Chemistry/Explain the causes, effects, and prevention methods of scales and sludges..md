@@ -12,11 +12,11 @@ scales can be caused by 2 ways,
 - **DECOMPOSITION OF CALCIUM BICARBONATE**
 
 $$ {Ca(HCO3)_{2} --> CaCO_{3} + CO_2  + H_2O} $$
-$$  \ce{Ca(HCO3)2 +H2O -> CaOH2 + CO2} $$
+$$  {Ca(HCO_3)_2 +H2O --> CaOH_2 + CO_2} $$
 In low pressure boilers, CaCO3 causes scale formation.	In High pressure boilers, CaCO3 becomes soluble.
 - **HYDROLYSIS OF MAGNESIUM SALTS**
 Dissolved magnesium salts undergo hydrolysis forming $\ce{Mg(OH)2}$ precipitate.
-$$\ce{MgCl2 + 2H2O <=> Mg(OH)2 v + 2HCl}$$
+$${MgCl_2 + 2H_2O <--> Mg(OH)_2 + 2HCl}$$
 $\ce{Mg(OH)2}$ so found by hydrolysis of magnesium salts is a soft type of scale.
 
 ##### > 1.2 CAUSES OF SLUDGE
