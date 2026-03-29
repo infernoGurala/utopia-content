@@ -11,7 +11,7 @@ Sludge is a **soft, loose and slimy** precipitate formed within the boiler.
 scales can be caused by 2 ways, 
 - **DECOMPOSITION OF CALCIUM BICARBONATE**
 
-$$ \ce{Ca(HCO3)2 -> CaCO3 v + CO2 ^ + H2O} $$
+$$ {Ca(HCO3)_{2} --> CaCO_{3} + CO_2  + H_2O} $$
 $$  \ce{Ca(HCO3)2 +H2O -> CaOH2 + CO2} $$
 In low pressure boilers, CaCO3 causes scale formation.	In High pressure boilers, CaCO3 becomes soluble.
 - **HYDROLYSIS OF MAGNESIUM SALTS**
