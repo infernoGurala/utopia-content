@@ -17,7 +17,7 @@
 
 5. [[Explain the working principles of Candle filtration and Activated carbon filtration. Compare their efficiency in removing physical and chemical impurities.]] `4M`
 
-6. Discuss the principle, mechanism, and applications of disinfection methods. `4M`
+6. [[Discuss the principle, mechanism, and applications of disinfection methods. ]]`4M`
 
 7. Define deionization and explain ion-exchange method with neat sketch. `4M`
 
