@@ -1,15 +1,7 @@
-
-
-
-
-![reference](61WlteI-H4L.jpg)
-
----
-
-
 #### Water Filtration Methods
 
 ## Candle Filtration
+![reference](61WlteI-H4L.jpg)
 
 > [!info] Mechanism
 > Water passes through a candle-shaped filter with very minute pores (generally **< 3 μm**). Any particle larger than the pore size is physically blocked.
@@ -34,6 +26,7 @@
 > [!info] Mechanism
 > Uses activated carbon filters to adsorb chemical impurities from water.
 
+![image](twam21-04-front-low-left.jpg)
 ### Advantages
 - Removes chemicals: **chlorine, pesticides, and other impurities**
 - Improves **taste and odour** of water
