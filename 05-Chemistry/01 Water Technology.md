@@ -7,9 +7,9 @@
 
 # UNIT 1: Water Technology
 
-1. Write the disadvantages of hard water in various fields. `4M`
+1. [[Write the disadvantages of hard water in various fields.]] `4M`
 
-2. Explain the causes, effects, and prevention methods of scales and sludges. `4M`
+2. [[Explain the causes, effects, and prevention methods of scales and sludges.]] `4M`
 
 3. Calgon conditioning is superior to other conditioning methods. Justify? `4M`
 
