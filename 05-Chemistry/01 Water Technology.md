@@ -5,9 +5,11 @@
 ---
 # QUESTIONS:
 
-1. [[Write the disadvantages of hard water in various fields.]] `4M`
+# UNIT 1: Water Technology
 
-2. [[Explain the causes, effects, and prevention methods of scales and sludges.]] `4M`
+1. Write the disadvantages of hard water in various fields. `4M`
+
+2. Explain the causes, effects, and prevention methods of scales and sludges. `4M`
 
 3. Calgon conditioning is superior to other conditioning methods. Justify? `4M`
 
@@ -23,7 +25,5 @@
 
 9. What is brackish water? Describe Electrodialysis with diagram. `4M`
 
-10. A water sample contains: $\text{Ca(HCO}_3)_2 = 162\,\text{mg/L}$, $\text{Mg(HCO}_3)_2 = 146\,\text{mg/L}$. Calculate: `4M`
-    - Total hardness in $\text{mg/L}$ as $\text{CaCO}_3$
-    - Amount of $\text{NaCl}$ required for regeneration if $10{,}000\,\text{L}$ of water is treated.
+10. 1A water sample contains: Ca(HCO3)2 = 162 mg/L, Mg(HCO3)2 = 146 mg/L. Calculate Total hardness in mg/L as CaCO3, Amount of NaCl required for regeneration if 10,000 L water is treated. `4M`
 
