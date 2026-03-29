@@ -16,7 +16,6 @@
 ---
 
 # Questions
-
 **Q1** — Solve: `4M`  *(Linear DE)*
 $$\frac{dy}{dx} + \frac{y}{x \log x} = \frac{\sin 2x}{\log x}$$
 ![Answer](M01Q01.jpeg)
@@ -83,18 +82,18 @@ $$\frac{dy}{dx} = \frac{x^2 + y^2 + 1}{2xy}$$
 
 **Q11** — Solve: `4M`  
 $$(xy^3 + y)\, dx + 2(x^2 y^2 + x + y^4)\, dy = 0$$
-![Answer](M01Q0.jpg)
+answer - if you are looking for an image, note that, not one man can do it all. 
 
 ---
 
 **Q12** — Solve: `4M`  
 $$x^4 \frac{dy}{dx} + x^3 y + \csc(xy) = 0$$
-![Answer](M01Q0.jpg)
+
 ---
 
 **Q13** — Find orthogonal trajectories of: `4M`  
 $$x^2 + y^2 + 2\lambda x + c = 0$$
-![Answer](M01Q0.jpg)
+
 
 ---
 
@@ -104,7 +103,7 @@ $$y^2 = 4a(x + a)$$
 (ii) 
 
 $$\frac{x^2}{a^2 + \lambda} + \frac{y^2}{b^2 + \lambda} = 1$$
-![Answer](M01Q0.jpg)
+
 
 ---
 
@@ -113,12 +112,12 @@ $$\frac{x^2}{a^2 + \lambda} + \frac{y^2}{b^2 + \lambda} = 1$$
 $$r = a(1 - \cos \theta)$$
 (ii) 
 $$r = 2a(\cos \theta + \sin \theta)$$
-![Answer](M01Q0.jpg)
+
 
 ---
 
 **Q16** — Model R-L circuit, write DE and find current \(i(t)\): `4M`
-![Answer](M01Q0.jpg)
+
 
 ---
 
@@ -128,6 +127,6 @@ Given:
 $$E = 6\ \text{V},\quad R = 100\ \Omega,\quad L = 0.1\ \text{H}$$  
 
 Also find time when current reaches half of maximum value.
-![Answer](M01Q0.jpg)
+
 
 ---

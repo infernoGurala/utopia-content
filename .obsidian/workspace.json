@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Download.md",
+                "file": "03-DEVC/01 First Order ODEs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Download"
+              "title": "01 First Order ODEs"
             }
           }
         ]
@@ -185,6 +185,9 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
+    "16-Other/EXTRA/MATHS answers/Unit-1/NonExactDE.md",
+    "Download.md",
+    "Pasted image 20260324190916.png",
     "15-Docs/University/index.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/new.png",
     "16-Other/EXTRA/MATHS answers/Unit-1/fav (1).png",
@@ -195,7 +198,6 @@
     "16-Other/EXTRA/MATHS answers/Unit-1/unnamed.jpg",
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 420382.crdownload",
     "15-Docs/index.md",
-    "NonExactDE.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/Linear Differential Equation.md",
     "15-Docs/University",
     "16-Other/EXTRA/MATHS answers/Unit-1/Exactness.md",
@@ -210,7 +212,6 @@
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 744263.crdownload",
     "16-Other/EXTRA/MATHS answers/Unit-1/M01Q09.jpg",
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 716773.crdownload",
-    "16-Other/EXTRA/MATHS answers/Unit-1/M01Q08.jpg",
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 857546.crdownload",
     "16-Other/EXTRA/MATHS answers/Unit-1/answers.md",
     "02-Thermodynamics/02 First Law.md",
@@ -228,7 +229,6 @@
     "03-DEVC/04 Vector Diff.md",
     "03-DEVC/05 Vector Int.md",
     "03-DEVC/Exam Prep.md",
-    "Download.md",
     "04-BEEE/01 DC and AC circuits.md"
   ]
 }
