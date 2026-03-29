@@ -3,7 +3,7 @@
 
 
 ![reference](61WlteI-H4L.jpg)
-![[Pasted image 20260329115405.png]]
+
 ---
 
 
