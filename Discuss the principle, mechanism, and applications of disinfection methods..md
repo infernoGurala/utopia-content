@@ -35,7 +35,8 @@ pores to block impurities.
 - The membrane acts as a **physical barrier**
 - It blocks: colloidal impurities, pathogenic organisms, turbidity
 - It **cannot remove** dissolved solids and salts (unlike RO)
-![ultrrrrra](What-is-Ultrafiltration-UF？.jpg)
+
+![ultra](ultra.jpg)
 **Key idea:** Think of it as an extremely fine sieve — anything larger than the
 pore size simply cannot pass through.
 
