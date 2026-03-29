@@ -1,10 +1,11 @@
 #### Water Filtration Methods
 
 ## Candle Filtration
-![reference](61WlteI-H4L.jpg)
 
 > [!info] Mechanism
 > Water passes through a candle-shaped filter with very minute pores (generally **< 3 μm**). Any particle larger than the pore size is physically blocked.
+
+![reference](61WlteI-H4L.jpg)
 
 ### Advantages
 - Simple operating mechanism
