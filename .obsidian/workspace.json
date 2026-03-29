@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05-Chemistry/01 Water Technology.md",
+                "file": "Explain the causes, effects, and prevention methods of scales and sludges..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 Water Technology"
+              "title": "Explain the causes, effects, and prevention methods of scales and sludges."
             }
           }
         ]
@@ -185,8 +185,13 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
-    "Write the disadvantages of hard water in various fields..md",
     "05-Chemistry/01 Water Technology.md",
+    "Explain the causes, effects, and prevention methods of scales and sludges..md",
+    "Chemistry/Write the disadvantages of hard water in various fields..md",
+    "05-Chemistry/02 Electro & corrosion.md",
+    "05-Chemistry/index.md",
+    "05-Chemistry/Exam Prep.md",
+    "Chemistry",
     "03-DEVC/01 First Order ODEs.md",
     "16-Other/EXTRA/MATHS answers/Unit-1/NonExactDE.md",
     "Download.md",
@@ -214,7 +219,6 @@
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 744263.crdownload",
     "16-Other/EXTRA/MATHS answers/Unit-1/M01Q09.jpg",
     "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 716773.crdownload",
-    "16-Other/EXTRA/MATHS answers/Unit-1/Unconfirmed 857546.crdownload",
     "16-Other/EXTRA/MATHS answers/Unit-1/answers.md",
     "02-Thermodynamics/02 First Law.md",
     "02-Thermodynamics/01 Introduction.md",
@@ -226,10 +230,6 @@
     "11-LAB/BEEE.md",
     "04-BEEE/index.md",
     "04-BEEE/Exam prep.md",
-    "03-DEVC/02 Higher Order ODEs.md",
-    "03-DEVC/03 Partial DEs.md",
-    "03-DEVC/04 Vector Diff.md",
-    "03-DEVC/05 Vector Int.md",
-    "03-DEVC/Exam Prep.md"
+    "03-DEVC/02 Higher Order ODEs.md"
   ]
 }
