@@ -1,7 +1,7 @@
 #### →Hard Water
 Hard water is simply water that contains high amounts of dissolved minerals, primarily **calcium and magnesium**, which prevents soap from producing lather.
 
-- These disadvantages make human life inefficient and and prevention methods are used against hard water. 
+- These disadvantages make human life inefficient and prevention methods are used against hard water. 
 ### Here are the disadvantages of hard water.
 
 #### 1. Household and Domestic Problems
