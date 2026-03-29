@@ -13,6 +13,7 @@
 
 $$2Ca²⁺ + (NaPO₃)₆ → [Ca₂(PO₃)₆]²⁻$$
 
+---
 >[!QUESTION]  Why calgon is superior?
 
 - **Prevents scale formation** — It converts hardness causing salts into soluble complexes, preventing scale deposition inside boiler.
