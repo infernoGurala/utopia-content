@@ -13,7 +13,7 @@
 
 3. [[Calgon conditioning is superior to other conditioning methods. Justify]] `4M`
 
-4. Evaluate the importance of maintaining ICMR and WHO specifications for potable water for public health protection. `4M`
+4. [[Evaluate the importance of maintaining ICMR and WHO specifications for potable water for public health protection. ]]`4M`
 
 5. Explain the working principles of Candle filtration and Activated carbon filtration. Compare their efficiency in removing physical and chemical impurities. `4M`
 
