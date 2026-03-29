@@ -16,7 +16,7 @@ $$  {Ca(HCO_3)_2 +H2O --> CaOH_2 + CO_2} $$
 In low pressure boilers, CaCO3 causes scale formation.	In High pressure boilers, CaCO3 becomes soluble.
 - **HYDROLYSIS OF MAGNESIUM SALTS**
 Dissolved magnesium salts undergo hydrolysis forming $\ce{Mg(OH)2}$ precipitate.
-$${MgCl_2 + 2H_2O <--> Mg(OH)_2 + 2HCl}$$
+$${MgCl_2+2H_2O<->Mg(OH)_2 + 2HCl}$$
 $\ce{Mg(OH)2}$ so found by hydrolysis of magnesium salts is a soft type of scale.
 
 ##### > 1.2 CAUSES OF SLUDGE
