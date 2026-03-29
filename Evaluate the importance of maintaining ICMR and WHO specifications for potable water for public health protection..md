@@ -5,7 +5,10 @@
 
 
 ~~Just write some s71t u know, its just some important points, use your commonsense.~~
-### Why Are These Specifications Important?
+
+---
+
+> [!question] Why Are These Specifications Important?
 
 **1. Prevention of Waterborne Diseases**
 
