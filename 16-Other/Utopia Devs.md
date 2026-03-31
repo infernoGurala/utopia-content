@@ -7,3 +7,4 @@
 
 1. Single latex Module addon
 2. month,date, and yesterday, remaining only selwxtion.
+3. attandace calculation, if users asks if he can be absent, say about how much will drop, also, if say surely if can be absent or not. 
