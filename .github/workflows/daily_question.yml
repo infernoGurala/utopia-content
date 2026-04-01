@@ -2,7 +2,8 @@ name: Generate Daily SciWordle Question
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # 12:05 AM IST = 6:35 PM UTC (previous day)
+    - cron: '35 18 * * *'
   workflow_dispatch:
 
 jobs:
