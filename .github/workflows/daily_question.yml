@@ -1,27 +1,21 @@
 name: Generate Daily SciWordle Question
-
 on:
   schedule:
-    # 12:05 AM IST = 6:35 PM UTC (previous day)
-    - cron: '35 18 * * *'
+    # 12:20 AM IST = 6:50 PM UTC (previous day)
+    - cron: '50 18 * * *'
   workflow_dispatch:
-
 jobs:
   generate:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
-
       - name: Install dependencies
         run: npm install firebase-admin
-
       - name: Run script
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
