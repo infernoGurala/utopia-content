@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 
-// 🔐 Load Firebase from GitHub Secret
+// 🔐 Firebase init
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
 
 admin.initializeApp({
@@ -9,29 +9,26 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-// 🤖 Gemini API
+// 🔑 Groq key
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
 
-// 📅 Get today's date in IST (IMPORTANT FIX)
+// 📅 IST date
 function getTodayDate() {
   const now = new Date();
-
   const istOffset = 5.5 * 60 * 60 * 1000;
   const istTime = new Date(now.getTime() + istOffset);
-
   const date = istTime.toISOString().split('T')[0];
 
-  console.log("TODAY DATE (IST):", date); // 🔍 debug
-
+  console.log("TODAY DATE (IST):", date);
   return date;
 }
 
-// 🤖 Generate question using AI
+// 🤖 AI generation
 async function generateWithAI() {
   const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
+      "Authorization": `Bearer ${GROQ_API_KEY}`,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
@@ -45,7 +42,7 @@ Generate a science word puzzle.
 Rules:
 - Answer must be ONE word (3–6 letters)
 - Only alphabets
-- Return JSON ONLY:
+- Return ONLY JSON (no explanation):
 
 {
   "answer": "ATOM",
@@ -67,11 +64,16 @@ Rules:
 
   if (!text) throw new Error("No AI response");
 
-  return JSON.parse(text);
+  // 🔥 Extract JSON safely
+  const match = text.match(/\{[\s\S]*\}/);
+  if (!match) throw new Error("Invalid JSON from AI");
+
+  const parsed = JSON.parse(match[0]);
+
+  return parsed;
 }
 
-
-// 🚀 Main runner
+// 🚀 Main
 async function run() {
   const today = getTodayDate();
 
@@ -79,7 +81,7 @@ async function run() {
   const doc = await docRef.get();
 
   if (doc.exists) {
-    console.log('Already exists:', today);
+    console.log("Already exists:", today);
     return;
   }
 
@@ -88,7 +90,7 @@ async function run() {
   try {
     question = await generateWithAI();
   } catch (e) {
-    console.log("AI failed, using fallback:", e.message);
+    console.log("AI failed, fallback:", e.message);
 
     question = {
       answer: "ATOM",
@@ -97,17 +99,16 @@ async function run() {
     };
   }
 
-  // ✅ Validation
+  // ✅ validation
   if (!question.answer || question.answer.length < 3) {
     throw new Error("Invalid AI output");
   }
 
-  // Normalize
   question.answer = question.answer.toUpperCase();
 
   await docRef.set(question);
 
-  console.log("✅ Created question for", today, question);
+  console.log("✅ Created:", today, question);
 }
 
 run();
