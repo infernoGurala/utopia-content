@@ -1,6 +1,7 @@
 const admin = require('firebase-admin');
 
-JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
+// ✅ Load from GitHub Secret
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
@@ -8,10 +9,7 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
+// Sample questions
 const words = [
   { answer: "ATOM", question: "Smallest unit of matter", category: "easy" },
   { answer: "CELL", question: "Basic unit of life", category: "easy" },
@@ -19,6 +17,7 @@ const words = [
   { answer: "FORCE", question: "Push or pull", category: "medium" },
 ];
 
+// Get today's date
 function getTodayDate() {
   return new Date().toISOString().split('T')[0];
 }
