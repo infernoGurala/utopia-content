@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
+const fetch = require('node-fetch');
 
-// ✅ Load from GitHub Secret
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
 
 admin.initializeApp({
@@ -9,17 +9,52 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-// Sample questions
-const words = [
-  { answer: "ATOM", question: "Smallest unit of matter", category: "easy" },
-  { answer: "CELL", question: "Basic unit of life", category: "easy" },
-  { answer: "ION", question: "Charged particle", category: "easy" },
-  { answer: "FORCE", question: "Push or pull", category: "medium" },
-];
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
-// Get today's date
 function getTodayDate() {
   return new Date().toISOString().split('T')[0];
+}
+
+async function generateWithAI() {
+  const prompt = `
+Generate a science word puzzle.
+
+Rules:
+- Answer must be ONE word (3–6 letters)
+- Provide:
+  answer, question, category (easy/medium/hard)
+- No special characters
+- Keep it clear and factual
+
+Return JSON ONLY like:
+{
+  "answer": "ATOM",
+  "question": "Smallest unit of matter",
+  "category": "easy"
+}
+`;
+
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }]
+      })
+    }
+  );
+
+  const data = await res.json();
+
+  const text =
+    data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error("AI returned invalid JSON");
+  }
 }
 
 async function run() {
@@ -33,31 +68,29 @@ async function run() {
     return;
   }
 
-const difficulties = ['easy', 'medium', 'hard'];
-const todayIndex = new Date().getDate() % difficulties.length;
-const targetDifficulty = difficulties[todayIndex];
+  let question;
 
-const filtered = words.filter(w => w.category === targetDifficulty);
+  try {
+    question = await generateWithAI();
+  } catch (e) {
+    console.log("AI failed, using fallback");
+    question = {
+      answer: "ATOM",
+      question: "Smallest unit of matter",
+      category: "easy"
+    };
+  }
 
-const random =
-  filtered.length > 0
-    ? filtered[Math.floor(Math.random() * filtered.length)]
-    : words[Math.floor(Math.random() * words.length)];
-  await docRef.set(random);
+  // Basic validation
+  if (!question.answer || question.answer.length < 3) {
+    throw new Error("Invalid AI output");
+  }
 
-  console.log('Created question for', today);
+  question.answer = question.answer.toUpperCase();
+
+  await docRef.set(question);
+
+  console.log('Created AI question for', today);
 }
-
-const existing = await db.collection('sciwordle_daily').get();
-
-const usedAnswers = new Set(
-  existing.docs.map(doc => doc.data().answer)
-);
-
-let question;
-
-do {
-  question = words[Math.floor(Math.random() * words.length)];
-} while (usedAnswers.has(question.answer));
 
 run();
