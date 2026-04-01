@@ -33,8 +33,16 @@ async function run() {
     return;
   }
 
-  const random = words[Math.floor(Math.random() * words.length)];
+const difficulties = ['easy', 'medium', 'hard'];
+const todayIndex = new Date().getDate() % difficulties.length;
+const targetDifficulty = difficulties[todayIndex];
 
+const filtered = words.filter(w => w.category === targetDifficulty);
+
+const random =
+  filtered.length > 0
+    ? filtered[Math.floor(Math.random() * filtered.length)]
+    : words[Math.floor(Math.random() * words.length)];
   await docRef.set(random);
 
   console.log('Created question for', today);
