@@ -12,8 +12,6 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
-const db = admin.firestore();
-
 const words = [
   { answer: "ATOM", question: "Smallest unit of matter", category: "easy" },
   { answer: "CELL", question: "Basic unit of life", category: "easy" },
