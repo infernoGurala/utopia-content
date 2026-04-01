@@ -7,7 +7,6 @@
 ---
 
 ###Notes 
-
 [pdf notes](https://drive.google.com/file/d/1Fx0P-O6eYAtWkLJwnsG9BkTV0JQ4PPnQ/view?usp=drivesdk)
 
 ---
