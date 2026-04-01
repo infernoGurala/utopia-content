@@ -24,7 +24,7 @@ function getTodayDate() {
 }
 
 // 🤖 AI generation
-async function generateWithAI() {
+async function generateWithAI(topic) {
   const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -37,12 +37,13 @@ async function generateWithAI() {
         {
           role: "user",
           content: `
-Generate a science word puzzle.
+Generate a ${topic} science word puzzle.
 
 Rules:
 - Answer must be ONE word (3–6 letters)
 - Only alphabets
-- Return ONLY JSON (no explanation):
+- Must strictly belong to ${topic}
+- Return ONLY JSON:
 
 {
   "answer": "ATOM",
@@ -64,28 +65,20 @@ Rules:
 
   if (!text) throw new Error("No AI response");
 
-  // 🔥 Extract JSON safely
-// 🔥 Extract FIRST valid object manually
-const blocks = text.split('\n').filter(line => line.includes('"answer"'));
+  // 🔥 Extract fields manually (robust)
+  const answerMatch = text.match(/"answer"\s*:\s*"([^"]+)"/);
+  const questionMatch = text.match(/"question"\s*:\s*"([^"]+)"/);
+  const categoryMatch = text.match(/"category"\s*:\s*"([^"]+)"/);
 
-if (blocks.length === 0) {
-  throw new Error("No valid AI output");
-}
+  if (!answerMatch || !questionMatch || !categoryMatch) {
+    throw new Error("Invalid AI output");
+  }
 
-// Build object manually
-const answerMatch = text.match(/"answer"\s*:\s*"([^"]+)"/);
-const questionMatch = text.match(/"question"\s*:\s*"([^"]+)"/);
-const categoryMatch = text.match(/"category"\s*:\s*"([^"]+)"/);
-
-if (!answerMatch || !questionMatch || !categoryMatch) {
-  throw new Error("Incomplete AI output");
-}
-
-return {
-  answer: answerMatch[1],
-  question: questionMatch[1],
-  category: categoryMatch[1]
-};
+  return {
+    answer: answerMatch[1],
+    question: questionMatch[1],
+    category: categoryMatch[1]
+  };
 }
 
 // 🚀 Main
@@ -100,10 +93,35 @@ async function run() {
     return;
   }
 
+  // 🎯 Topic rotation
+  const topics = ["Physics", "Chemistry", "Biology"];
+  const topic = topics[new Date().getDate() % topics.length];
+
+  console.log("Selected topic:", topic);
+
   let question;
 
   try {
-    question = await generateWithAI();
+    question = await generateWithAI(topic);
+
+    // Normalize
+    question.answer = question.answer.toUpperCase();
+
+    // ✅ Validation
+    if (!/^[A-Z]{3,6}$/.test(question.answer)) {
+      throw new Error("Invalid word format");
+    }
+
+    // 🔁 Prevent duplicates
+    const existingDocs = await db.collection('sciwordle_daily').get();
+    const usedAnswers = new Set(
+      existingDocs.docs.map(doc => doc.data().answer)
+    );
+
+    if (usedAnswers.has(question.answer)) {
+      throw new Error("Duplicate answer generated");
+    }
+
   } catch (e) {
     console.log("AI failed, fallback:", e.message);
 
@@ -113,13 +131,6 @@ async function run() {
       category: "easy"
     };
   }
-
-  // ✅ validation
-  if (!question.answer || question.answer.length < 3) {
-    throw new Error("Invalid AI output");
-  }
-
-  question.answer = question.answer.toUpperCase();
 
   await docRef.set(question);
 
