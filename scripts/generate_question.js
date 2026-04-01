@@ -33,8 +33,9 @@ Generate a science word puzzle.
 
 Rules:
 - Answer must be ONE word (3–6 letters)
-- Only alphabets (no symbols)
-- Provide JSON ONLY in this format:
+- Only alphabets
+- Return JSON ONLY:
+
 {
   "answer": "ATOM",
   "question": "Smallest unit of matter",
@@ -42,16 +43,34 @@ Rules:
 }
 `;
 
-const res = await fetch(
-  `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }]
-    })
-  }
-);
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: prompt }]
+          }
+        ]
+      })
+    }
+  );
+
+  const data = await res.json();
+
+  console.log("AI RAW:", JSON.stringify(data));
+
+  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+  if (!text) throw new Error("No AI response");
+
+  return JSON.parse(text);
+}
 
   const data = await res.json();
 
