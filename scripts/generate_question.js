@@ -40,4 +40,16 @@ async function run() {
   console.log('Created question for', today);
 }
 
+const existing = await db.collection('sciwordle_daily').get();
+
+const usedAnswers = new Set(
+  existing.docs.map(doc => doc.data().answer)
+);
+
+let question;
+
+do {
+  question = words[Math.floor(Math.random() * words.length)];
+} while (usedAnswers.has(question.answer));
+
 run();
