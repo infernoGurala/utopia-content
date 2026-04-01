@@ -65,12 +65,27 @@ Rules:
   if (!text) throw new Error("No AI response");
 
   // 🔥 Extract JSON safely
-  const match = text.match(/\{[\s\S]*\}/);
-  if (!match) throw new Error("Invalid JSON from AI");
+// 🔥 Extract FIRST valid object manually
+const blocks = text.split('\n').filter(line => line.includes('"answer"'));
 
-  const parsed = JSON.parse(match[0]);
+if (blocks.length === 0) {
+  throw new Error("No valid AI output");
+}
 
-  return parsed;
+// Build object manually
+const answerMatch = text.match(/"answer"\s*:\s*"([^"]+)"/);
+const questionMatch = text.match(/"question"\s*:\s*"([^"]+)"/);
+const categoryMatch = text.match(/"category"\s*:\s*"([^"]+)"/);
+
+if (!answerMatch || !questionMatch || !categoryMatch) {
+  throw new Error("Incomplete AI output");
+}
+
+return {
+  answer: answerMatch[1],
+  question: questionMatch[1],
+  category: categoryMatch[1]
+};
 }
 
 // 🚀 Main
