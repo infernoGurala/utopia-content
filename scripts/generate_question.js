@@ -10,7 +10,7 @@ admin.initializeApp({
 const db = admin.firestore();
 
 // 🤖 Gemini API
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
 
 // 📅 Get today's date in IST (IMPORTANT FIX)
 function getTodayDate() {
@@ -28,7 +28,18 @@ function getTodayDate() {
 
 // 🤖 Generate question using AI
 async function generateWithAI() {
-  const prompt = `
+  const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      model: "llama3-70b-8192",
+      messages: [
+        {
+          role: "user",
+          content: `
 Generate a science word puzzle.
 
 Rules:
@@ -41,51 +52,24 @@ Rules:
   "question": "Smallest unit of matter",
   "category": "easy"
 }
-`;
-
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: prompt }]
-          }
-        ]
-      })
-    }
-  );
+`
+        }
+      ],
+      temperature: 0.7
+    })
+  });
 
   const data = await res.json();
 
   console.log("AI RAW:", JSON.stringify(data));
 
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  const text = data?.choices?.[0]?.message?.content;
 
   if (!text) throw new Error("No AI response");
 
   return JSON.parse(text);
 }
 
-  const data = await res.json();
-
-  console.log("AI RAW:", JSON.stringify(data)); // 🔍 debug
-
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-  if (!text) throw new Error("No AI response");
-
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new Error("Invalid JSON from AI");
-  }
-}
 
 // 🚀 Main runner
 async function run() {
