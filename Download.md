@@ -10,7 +10,7 @@ title: Download
   <div class="download-meta">
     <div class="meta-item">
       <span class="meta-key">Version</span>
-      <strong>2.2.2</strong>
+      <strong id="download-version">Loading latest release...</strong>
     </div>
     <div class="meta-item">
       <span class="meta-key">Platform</span>
@@ -22,12 +22,54 @@ title: Download
     </div>
   </div>
 
-  <a class="download-button" href="https://github.com/infernoGurala/utopia-app/releases/download/v2.2.2/Utopia-v2.2.2.apk" download>Download APK</a>
+  <a
+    class="download-button"
+    id="download-button"
+    href="https://github.com/infernoGurala/utopia-app/releases/latest"
+  >
+    Download Latest APK
+  </a>
 
   <p class="download-footnote">
     Your cloud data remains safe. Install the APK and sign in again if needed.
   </p>
 </div>
+
+<script>
+(() => {
+  const button = document.getElementById("download-button")
+  const version = document.getElementById("download-version")
+  const apiUrl = "https://api.github.com/repos/infernoGurala/utopia-app/releases/latest"
+  const releasesUrl = "https://github.com/infernoGurala/utopia-app/releases/latest"
+
+  if (!button || !version) return
+
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status}`)
+      }
+      return response.json()
+    })
+    .then((release) => {
+      const apkAsset = release.assets?.find((asset) => asset.name?.toLowerCase().endsWith(".apk"))
+
+      version.textContent = release.tag_name || "Latest"
+
+      if (apkAsset?.browser_download_url) {
+        button.href = apkAsset.browser_download_url
+      } else {
+        button.href = releasesUrl
+        button.textContent = "View Latest Release"
+      }
+    })
+    .catch(() => {
+      version.textContent = "Latest"
+      button.href = releasesUrl
+      button.textContent = "View Latest Release"
+    })
+})()
+</script>
 
 <style>
 .article-title {
