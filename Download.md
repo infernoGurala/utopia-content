@@ -110,7 +110,10 @@ title: Download
   align-items: center;
   justify-content: center;
   gap: 0;
+  width: fit-content;
   margin-top: 1.6rem;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1.4rem;
   min-width: 220px;
   height: 56px;
