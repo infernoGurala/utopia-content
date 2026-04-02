@@ -10,7 +10,7 @@ title: Download
   <div class="download-meta">
     <div class="meta-item">
       <span class="meta-key">Version</span>
-      <strong id="download-version">Loading latest release...</strong>
+      <strong>2.2.2</strong>
     </div>
     <div class="meta-item">
       <span class="meta-key">Platform</span>
@@ -24,52 +24,15 @@ title: Download
 
   <a
     class="download-button"
-    id="download-button"
-    href="https://github.com/infernoGurala/utopia-app/releases/latest"
+    href="https://github.com/infernoGurala/utopia-app/releases/tag/v2.2.2"
   >
-    Download Latest APK
+    Download APK
   </a>
 
   <p class="download-footnote">
     Your cloud data remains safe. Install the APK and sign in again if needed.
   </p>
 </div>
-
-<script>
-(() => {
-  const button = document.getElementById("download-button")
-  const version = document.getElementById("download-version")
-  const apiUrl = "https://api.github.com/repos/infernoGurala/utopia-app/releases/latest"
-  const releasesUrl = "https://github.com/infernoGurala/utopia-app/releases/latest"
-
-  if (!button || !version) return
-
-  fetch(apiUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`GitHub API error: ${response.status}`)
-      }
-      return response.json()
-    })
-    .then((release) => {
-      const apkAsset = release.assets?.find((asset) => asset.name?.toLowerCase().endsWith(".apk"))
-
-      version.textContent = release.tag_name || "Latest"
-
-      if (apkAsset?.browser_download_url) {
-        button.href = apkAsset.browser_download_url
-      } else {
-        button.href = releasesUrl
-        button.textContent = "View Latest Release"
-      }
-    })
-    .catch(() => {
-      version.textContent = "Latest"
-      button.href = releasesUrl
-      button.textContent = "View Latest Release"
-    })
-})()
-</script>
 
 <style>
 .article-title {
@@ -150,6 +113,7 @@ title: Download
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0;
   margin-top: 1.6rem;
   padding: 0.95rem 1.4rem;
   min-width: 220px;
@@ -162,7 +126,8 @@ title: Download
   box-shadow: 0 14px 30px rgba(255, 152, 34, 0.28);
 }
 
-.download-button::after {
+.download-button::after,
+.download-button .external-icon {
   content: none !important;
   display: none !important;
 }
