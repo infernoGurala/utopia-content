@@ -22,7 +22,7 @@ title: Download UTOPIA
     </div>
   </div>
 
-  <a class="download-button" href="/static/downloads/Utopia-v2.2.2.apk" download>Download APK</a>
+  <a class="download-button" href="https://github.com/infernoGurala/utopia-app/releases/download/v2.2.2/Utopia-v2.2.2.apk">Download APK</a>
 
   <p class="download-footnote">
     Your cloud data remains safe. Install the APK and sign in again if needed.
