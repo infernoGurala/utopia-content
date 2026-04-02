@@ -1,5 +1,5 @@
 ---
-title: "Obsidian feature test — master template"
+title: "feature test — master template"
 aliases: [feature-test, obsidian-template]
 tags: [template, test, obsidian]
 cssclasses: [wide-page]
