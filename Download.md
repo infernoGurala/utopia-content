@@ -105,13 +105,14 @@ title: Download
 }
 
 .download-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
   margin-top: 1.6rem;
   padding: 0.95rem 1.4rem;
   min-width: 220px;
+  min-height: 56px;
   border-radius: 999px;
   background: linear-gradient(135deg, #ffb84d 0%, #ff9822 100%);
   color: #1b1104 !important;
@@ -145,9 +146,10 @@ title: Download
   }
 
   .download-button {
-    display: block;
+    display: flex;
     width: 100%;
     min-width: 0;
+    min-height: 56px;
     text-align: center;
   }
 }
