@@ -21,7 +21,7 @@
 
 7. Define deionization and explain ion-exchange method with neat sketch. `4M`
 
-8. Explain Zeolite method with neat diagram and write its advantages. `4M`
+8. Zeolite method with neat diagram and write its advantages. `4M`
 
 9. What is brackish water? Describe Electrodialysis with diagram. `4M`
 
