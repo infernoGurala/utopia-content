@@ -106,14 +106,10 @@ title: Download
 
 .download-button {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0;
-  width: fit-content;
-  margin-top: 1.6rem;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0 1.4rem;
   min-width: 220px;
   height: 56px;
@@ -147,6 +143,11 @@ title: Download
   font-size: 0.95rem;
   line-height: 1.7;
   color: rgba(244, 241, 234, 0.7);
+}
+
+.download-card > p:has(> .download-button) {
+  text-align: center;
+  margin-top: 1.6rem;
 }
 
 @media (max-width: 720px) {
