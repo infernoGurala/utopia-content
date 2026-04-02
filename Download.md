@@ -72,6 +72,10 @@ title: UTOPIA
 }
 
 .meta-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 96px;
   padding: 1rem;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.05);
@@ -88,8 +92,11 @@ title: UTOPIA
 }
 
 .meta-item strong {
+  display: block;
   color: #ffffff;
   font-size: 1rem;
+  line-height: 1.35;
+  text-wrap: balance;
 }
 
 .download-button {
