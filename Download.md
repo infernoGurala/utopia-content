@@ -1,4 +1,5 @@
-title: UTOPIA
+---
+title: Download
 ---
 
 <div class="download-card">
@@ -29,9 +30,13 @@ title: UTOPIA
 </div>
 
 <style>
+.article-title {
+  display: none;
+}
+
 .download-card {
   max-width: 760px;
-  margin: 2rem auto;
+  margin: 0.75rem auto 2rem;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
