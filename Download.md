@@ -110,14 +110,15 @@ title: Download
   justify-content: center;
   gap: 0;
   margin-top: 1.6rem;
-  padding: 0.95rem 1.4rem;
+  padding: 0 1.4rem;
   min-width: 220px;
-  min-height: 56px;
+  height: 56px;
   border-radius: 999px;
   background: linear-gradient(135deg, #ffb84d 0%, #ff9822 100%);
   color: #1b1104 !important;
   font-weight: 800;
-  line-height: 1;
+  font-size: 1rem;
+  line-height: 1.1;
   text-decoration: none !important;
   box-shadow: 0 14px 30px rgba(255, 152, 34, 0.28);
 }
@@ -149,7 +150,7 @@ title: Download
     display: flex;
     width: 100%;
     min-width: 0;
-    min-height: 56px;
+    height: 56px;
     text-align: center;
   }
 }
