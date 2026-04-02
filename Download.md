@@ -1,5 +1,4 @@
----
-title: Download UTOPIA
+title: UTOPIA
 ---
 
 <div class="download-card">
