@@ -22,7 +22,7 @@ title: Download
     </div>
   </div>
 
-  <a class="download-button" href="https://github.com/infernoGurala/utopia-app/releases/download/v2.2.2/Utopia-v2.2.2.apk">Download APK</a>
+  <a class="download-button" href="https://github.com/infernoGurala/utopia-app/releases/download/v2.2.2/Utopia-v2.2.2.apk" download>Download APK</a>
 
   <p class="download-footnote">
     Your cloud data remains safe. Install the APK and sign in again if needed.
@@ -105,15 +105,24 @@ title: Download
 }
 
 .download-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 1.6rem;
   padding: 0.95rem 1.4rem;
+  min-width: 220px;
   border-radius: 999px;
   background: linear-gradient(135deg, #ffb84d 0%, #ff9822 100%);
   color: #1b1104 !important;
   font-weight: 800;
+  line-height: 1;
   text-decoration: none !important;
   box-shadow: 0 14px 30px rgba(255, 152, 34, 0.28);
+}
+
+.download-button::after {
+  content: none !important;
+  display: none !important;
 }
 
 .download-footnote {
@@ -136,6 +145,7 @@ title: Download
   .download-button {
     display: block;
     width: 100%;
+    min-width: 0;
     text-align: center;
   }
 }
