@@ -1,1 +1,0 @@
-Open the below file and follow the instructions.
