@@ -1,12 +1,14 @@
 ### NOTES
 
-[PDF Document](https://drive.google.com/file/d/1LyUtbtb9auT4lg1AikkVP1sfoL3PN35o/view?usp=drive_link)
+[Theory](https://drive.google.com/file/d/1LyUtbtb9auT4lg1AikkVP1sfoL3PN35o/view?usp=drive_link)
+
+[Answers](https://drive.google.com/file/d/1171xE80aPXfTCsLzLIRPnzUPK24jRgx-/view?usp=drivesdk)
 
 ---
 
 ### Answers
 
-[PDF Doc](https://drive.google.com/file/d/1171xE80aPXfTCsLzLIRPnzUPK24jRgx-/view?usp=drivesdk)
+
 
 
 ---
