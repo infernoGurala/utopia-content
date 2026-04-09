@@ -6,13 +6,6 @@
 
 ---
 
-### Answers
-
-
-
-
----
-
 ### Questions 
 
 1) Explain simple if, if-else with syntax,flow chart and suitable example program.
