@@ -1,12 +1,8 @@
-### RESOURCES
-
-[Applications](https://drive.google.com/file/d/1seE8gOp7ENLRhYyw6F1aXu8ryJtK3lI8/view?usp=drive_link)
-
----
-
 ###Notes
 
 [unit-1 pdf notes](https://drive.google.com/file/d/1YMgOJ2QqszLg6_kqCksl8qN2kL6x6H9Z/view?usp=drivesdk)
+
+[Applications](https://drive.google.com/file/d/1seE8gOp7ENLRhYyw6F1aXu8ryJtK3lI8/view?usp=drive_link)
 
 ---
 ### ASSIGNMENTS
