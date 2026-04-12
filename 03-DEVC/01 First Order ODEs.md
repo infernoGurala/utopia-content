@@ -4,7 +4,7 @@
 
 ---
 
-### Notes
+### NOTES
 
 [unit-1 pdf notes](https://drive.google.com/file/d/1YMgOJ2QqszLg6_kqCksl8qN2kL6x6H9Z/view?usp=drivesdk)
 
