@@ -1,3 +1,0 @@
-# Manual
-
-Start writing your notes here...
