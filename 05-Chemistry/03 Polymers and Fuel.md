@@ -1,5 +1,5 @@
 ### NOTES
-
+[pdf notes](https://drive.google.com/file/d/1lHY24JMwwmCKBkIuTn-c2TVezZnwRrZR/view?usp=drivesdk)
 
 ---
 ### ASSIGNMENTS
