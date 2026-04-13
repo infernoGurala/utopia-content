@@ -9,7 +9,7 @@ Assignment-num
 
 ### Questions
 
-1. What is plastic.What is the difference between thermoplastics and thermosetting plastics?
+1.What is plastic.What is the difference between thermoplastics and thermosetting plastics?
 
 2.Define fabrication and Explain injection moulding with neat sketch?
 
