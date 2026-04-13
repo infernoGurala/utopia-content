@@ -1,16 +1,3 @@
-### NOTES
-
-[class ppt](https://drive.google.com/file/d/1yP2g22ZVtf8jxuOgpgudq5-OBgR0n1AG/view?usp=drive_link)
-
----
-### ASSIGNMENTS
-
-[Assignment-1](https://drive.google.com/file/d/1GWi7iftYqUukiiFlEEOw1BAp41jKmKJK/view?usp=drive_link)
-
-
----
-# Questions
-
 1. [[Explain the following terms System,Surrounding, Control volume, Universe, and Types of System]]
 2. [[Explain about the concept of continuum with diagram.]]
 3. [[Define the following terms, State, Property, Process, Cycle.]]
