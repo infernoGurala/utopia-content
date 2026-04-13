@@ -2,10 +2,6 @@
 
 [Class ppt notes](https://docs.google.com/presentation/d/1z4rLvyXWU-LK0WiWxsC82jh2LJ3FullA/edit?usp=drivesdk&ouid=117269870135972765951&rtpof=true&sd=true)
 
----
-
-
----
 # Unit 2
 
 ### 1. DC Generator
