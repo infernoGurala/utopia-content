@@ -9,15 +9,62 @@
 
 
 ---
-# Questions
+### Questions
+  
+**Q1** — Explain the following terms: `4M`  
+1. System  
+2. Surrounding  
+3. Control Volume  
+4. Universe  
+5. Types of System  
+  
+---  
+  
+**Q2** — Explain the concept of continuum with diagram. `4M`  
+  
+---  
+  
+**Q3** — Define the following terms: `4M`  
+1. State  
+2. Property  
+3. Process  
+4. Cycle  
+  
+---  
+  
+**Q4** — Explain Thermodynamic Equilibrium and its types with suitable examples. `4M`  
+  
+---  
+  
+**Q5** — Explain quasi-static process. State its salient features. `4M`  
+  
+---  
+  
+**Q6** — Distinguish between macroscopic and microscopic views. `4M`  
+  
+---  
+  
+**Q7** — Explain reversible and irreversible processes, and causes of irreversibility. `4M`  
+  
+---  
+  
+**Q8** — Explain Zeroth Law of Thermodynamics and concept of temperature. `4M`  
+  
+---  
+  
+**Q9** — Explain work and heat, their types, and sign convention. `4M`  
+  
+---  
 
-1. [[Explain the following terms System,Surrounding, Control volume, Universe, and Types of System]]
-2. [[Explain about the concept of continuum with diagram.]]
-3. [[Define the following terms, State, Property, Process, Cycle.]]
-4. [[Explain about Thermodynamic Equilibrium, its types along with suitable examples.]]
-5. [[Explain quasi-static process State its salient features.]]
-6. [[Distinguish between macroscopic and microscopic views.]]
-7. [[Explain reversible and irreversible processes, and causes of irreversibly.]]
-8. [[Explain Zeroth law of thermodynamics and concept of temperature.]]
-9. [[explain work and heat, its types and sign convections]]
-10.  Identify whether the system is open or closed: *i) A tube of a bicycle filled with air, ii) A jet engine in flight, iii) A household refrigerator in operation, iv) Water pump, v) Pressure cooker without whistling, vi) Steam turbine vii) Car battery, viii) An electric geyser.*
+  
+**Q10** — Identify whether the system is open or closed: `4M`  
+i) Tube of a bicycle filled with air  
+ii) Jet engine in flight  
+iii) Household refrigerator in operation  
+iv) Water pump  
+v) Pressure cooker without whistling  
+vi) Steam turbine  
+vii) Car battery  
+viii) Electric geyser  
+  
+---
