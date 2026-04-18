@@ -32,7 +32,7 @@ async function generateWithAI(topic, usedAnswers) {
         content: `Generate a ${topic} science word puzzle for school students (Class 5-10).
 
 Rules:
-- Answer must be ONE word, 4-10 letters, only alphabets, no spaces
+- Answer must be ONE word, 4-6 letters, only alphabets, no spaces
 - Must strictly belong to ${topic}
 - Do NOT use any of these already-used answers: ${[...usedAnswers].join(', ')}
 - Return ONLY valid JSON, no explanation, no markdown:
