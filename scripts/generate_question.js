@@ -84,11 +84,20 @@ async function run() {
   const today = getTodayIST();
   console.log("TODAY DATE (IST):", today);
 
-  const docRef = db.collection('sciwordle_daily').doc(today);
-  const doc = await docRef.get();
-
-  if (doc.exists) {
-    console.log("Already exists for today:", today);
+  const editions = [
+    { suffix: "m", label: "Morning Edition" },
+    { suffix: "a", label: "Afternoon Edition" },
+    { suffix: "e", label: "Evening Edition" },
+  ];
+  const todayDocRefs = editions.map(edition => ({
+    ...edition,
+    id: `${today}-${edition.suffix}`,
+    ref: db.collection('sciwordle_daily').doc(`${today}-${edition.suffix}`)
+  }));
+  const todayDocs = await Promise.all(todayDocRefs.map(item => item.ref.get()));
+  const hasAllEditions = todayDocs.every(doc => doc.exists);
+  if (hasAllEditions) {
+    console.log("All editions already exist for today:", today);
     return;
   }
 
@@ -107,44 +116,58 @@ async function run() {
   );
   console.log("Used answers so far:", usedAnswers.size);
 
-  let question = null;
+  const fallbacks = [
+    { answer: "nucleus",   question: "Q. I am the control centre of a cell. What am I?",           category: "Biology"  },
+    { answer: "magnet",    question: "Q. I attract iron and have north and south poles. What am I?", category: "Physics"  },
+    { answer: "oxygen",    question: "Q. I am the gas humans breathe in to survive. What am I?",    category: "Chemistry" },
+    { answer: "eclipse",   question: "Q. I happen when one celestial body blocks another. What am I?", category: "Astronomy" },
+    { answer: "erosion",   question: "Q. I am the wearing away of rock and soil by wind or water. What am I?", category: "Earth Science" },
+    { answer: "photon",    question: "Q. I am a particle of light with no mass. What am I?",        category: "Physics"  },
+    { answer: "enzyme",    question: "Q. I speed up chemical reactions in living organisms. What am I?", category: "Biology"  },
+    { answer: "planet",    question: "Q. I orbit a star and can have moons. What am I?", category: "Astronomy"  },
+    { answer: "matter",    question: "Q. I am anything that has mass and occupies space. What am I?", category: "General Science"  },
+  ];
 
-  // Retry up to 3 times before falling back
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      console.log(`AI attempt ${attempt}...`);
-      question = await generateWithAI(topic, usedAnswers);
-      console.log("AI succeeded:", question);
-      break;
-    } catch (e) {
-      console.log(`Attempt ${attempt} failed: ${e.message}`);
+  for (let i = 0; i < todayDocRefs.length; i++) {
+    const slot = todayDocRefs[i];
+    const slotDoc = todayDocs[i];
+    if (slotDoc.exists) {
+      const existingAnswer = slotDoc.data()?.answer;
+      if (existingAnswer) usedAnswers.add(existingAnswer);
+      console.log(`Skipping existing ${slot.label}: ${slot.id}`);
+      continue;
     }
+
+    let question = null;
+    for (let attempt = 1; attempt <= 5; attempt++) {
+      try {
+        console.log(`${slot.label} AI attempt ${attempt}...`);
+        question = await generateWithAI(topic, usedAnswers);
+        console.log(`${slot.label} AI succeeded:`, question);
+        break;
+      } catch (e) {
+        console.log(`${slot.label} attempt ${attempt} failed: ${e.message}`);
+      }
+    }
+
+    if (!question) {
+      question = fallbacks.find(f => !usedAnswers.has(f.answer)) || fallbacks[0];
+      console.log(`${slot.label} using fallback:`, question);
+    }
+
+    usedAnswers.add(question.answer);
+    await slot.ref.set({
+      ...question,
+      slot: slot.suffix,
+      edition: slot.label,
+      generatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    console.log(`✅ Created ${slot.label}: ${slot.id}`);
+    console.log("   answer:  ", question.answer);
+    console.log("   question:", question.question);
+    console.log("   category:", question.category);
   }
-
-  // Fallback only if all 3 attempts failed
-  if (!question) {
-    // Pick a fallback not already used
-    const fallbacks = [
-      { answer: "nucleus",   question: "Q. I am the control centre of a cell. What am I?",           category: "Biology"  },
-      { answer: "magnet",    question: "Q. I attract iron and have north and south poles. What am I?", category: "Physics"  },
-      { answer: "oxygen",    question: "Q. I am the gas humans breathe in to survive. What am I?",    category: "Chemistry" },
-      { answer: "eclipse",   question: "Q. I happen when one celestial body blocks another. What am I?", category: "Astronomy" },
-      { answer: "erosion",   question: "Q. I am the wearing away of rock and soil by wind or water. What am I?", category: "Earth Science" },
-      { answer: "photon",    question: "Q. I am a particle of light with no mass. What am I?",        category: "Physics"  },
-    ];
-    question = fallbacks.find(f => !usedAnswers.has(f.answer)) || fallbacks[0];
-    console.log("Using fallback:", question);
-  }
-
-  await docRef.set({
-    ...question,
-    generatedAt: admin.firestore.FieldValue.serverTimestamp()
-  });
-
-  console.log("✅ Created:", today);
-  console.log("   answer:  ", question.answer);
-  console.log("   question:", question.question);
-  console.log("   category:", question.category);
 }
 
 run();
