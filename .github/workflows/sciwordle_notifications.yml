@@ -2,10 +2,10 @@ name: SciWordle Slot Notifications
 
 on:
   schedule:
-    # 09:00 IST / 13:00 IST / 19:00 IST
-    - cron: '30 3 * * *'
-    - cron: '30 7 * * *'
-    - cron: '30 13 * * *'
+    # 01:00 IST / 11:00 IST / 16:00 IST
+    - cron: '30 19 * * *'
+    - cron: '30 5 * * *'
+    - cron: '30 10 * * *'
   workflow_dispatch:
 
 permissions:
