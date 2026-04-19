@@ -1,0 +1,97 @@
+name: SciWordle Slot Notifications
+
+on:
+  schedule:
+    # 09:00 IST / 13:00 IST / 19:00 IST
+    - cron: '30 3 * * *'
+    - cron: '30 7 * * *'
+    - cron: '30 13 * * *'
+  workflow_dispatch:
+
+jobs:
+  send_sciwordle_notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version: '24'
+
+      - name: Install Firebase Admin SDK
+        run: npm install firebase-admin
+
+      - name: Send SciWordle notification
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        run: |
+          node << 'EOF_NODE'
+          const admin = require('firebase-admin');
+
+          const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+          admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount),
+            projectId: process.env.FIREBASE_PROJECT_ID,
+          });
+
+          const db = admin.firestore();
+
+          async function sendSciWordleNotification() {
+            try {
+              const usersSnapshot = await db.collection('users').get();
+              const tokenSet = new Set();
+
+              usersSnapshot.forEach((doc) => {
+                const data = doc.data() || {};
+                if (data.sciWordleNotificationEnabled === false) {
+                  return;
+                }
+
+                const token = typeof data.fcmToken === 'string' ? data.fcmToken.trim() : '';
+                if (token) {
+                  tokenSet.add(token);
+                }
+              });
+
+              const tokens = Array.from(tokenSet);
+              console.log(`Eligible users: ${tokens.length} tokens from ${usersSnapshot.size} users`);
+
+              if (tokens.length === 0) {
+                console.log('No eligible FCM tokens found. Exiting.');
+                return;
+              }
+
+              const chunkSize = 500;
+              for (let i = 0; i < tokens.length; i += chunkSize) {
+                const chunk = tokens.slice(i, i + chunkSize);
+                const message = {
+                  notification: {
+                    title: 'SCI Wordle Edition 🧬',
+                    body: 'Your new science word puzzle is ready!',
+                  },
+                  data: {
+                    type: 'sci_wordle',
+                  },
+                  android: {
+                    priority: 'high',
+                    notification: {
+                      sound: 'default',
+                    },
+                  },
+                  tokens: chunk,
+                };
+
+                const response = await admin.messaging().sendEachForMulticast(message);
+                console.log(`Sent: ${response.successCount} success, ${response.failureCount} failed`);
+              }
+
+              console.log('SciWordle notifications complete!');
+            } catch (err) {
+              console.error('Error:', err);
+              process.exit(1);
+            }
+          }
+
+          sendSciWordleNotification();
+          EOF_NODE
