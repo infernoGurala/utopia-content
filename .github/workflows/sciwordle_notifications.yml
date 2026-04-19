@@ -8,6 +8,9 @@ on:
     - cron: '30 13 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   send_sciwordle_notification:
     runs-on: ubuntu-latest
