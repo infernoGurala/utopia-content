@@ -77,7 +77,10 @@ jobs:
 
               console.log(`Today is ${today}`);
 
-              const isHoliday = dayData.holiday || override.holiday;
+              // FIXED: treat missing timetable entry (Saturday/Sunday) as holiday
+              const isWeekendOrMissing = !dayData;
+              const isHoliday = isWeekendOrMissing || dayData?.holiday || override.holiday;
+
               const holidayNote = override.holiday_note || '';
               const quote = getRandomQuote(quotesData.quotes);
 
