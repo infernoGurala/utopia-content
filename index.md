@@ -1,5 +1,5 @@
 ---
-title: Semester II
+title: Cheat code 3003S
 socialImage: https://utopia.inferalis.space/static/og-image.png
 ---
 If the system is stupid, why not have it?
