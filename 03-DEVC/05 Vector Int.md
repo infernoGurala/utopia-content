@@ -1,8 +1,0 @@
-### NOTES
-
-
-
----
-### ASSIGNMENTS
-
-
