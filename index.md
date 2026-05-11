@@ -2,8 +2,7 @@
 title: Semester II
 socialImage: https://utopia.inferalis.space/static/og-image.png
 ---
-Your university files, beautifully organised.
-
+If the system is stupid, why not have it?
 
 <div class="course-grid">
   <a href="IOT" class="course-card"><span class="course-icon material-symbols-outlined">sensors</span>IOT</a>
