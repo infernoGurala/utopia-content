@@ -7,7 +7,7 @@ Key points about algorithms: they receive input, contain a sequence of statement
 
 ---
 
-## Q1.1. Characteristics of an Algorithm  🌟
+# Q1.1. Characteristics of an Algorithm  🌟
 
 **1. Clear & Unambiguous** — Every step must be precisely and clearly stated with no room for confusion or misunderstanding about what to do.
 
@@ -23,7 +23,7 @@ Key points about algorithms: they receive input, contain a sequence of statement
 
 ---
 
-## Q1.2. Example Algorithm: Find the Largest of Two Numbers 🌟
+# Q1.2. Example Algorithm: Find the Largest of Two Numbers 🌟
 
 1. Start
 2. Read A and B.
@@ -37,7 +37,7 @@ Key points about algorithms: they receive input, contain a sequence of statement
 - Output: 15 is the largest number.
 
 ---
-## Q2. Algorithm to find the area and perimeter of a circle 
+# Q2. Algorithm to find the area and perimeter of a circle 
 
 Area of circle = ${\pi}r^{2}$ 
 Perimeter or circumference = $2{\pi}r$ 
@@ -64,7 +64,7 @@ Perimeter or circumference = $2{\pi}r$
 6. stop
 
 ---
-## Q4. Time complexity of an algorithm
+# Q4. Time complexity of an algorithm
 
 Time Complexity is the amount of time an algorithm takes to run as a function of the input size (n).
 
@@ -93,7 +93,7 @@ There are 2 main approaches:
 ![](https://res.cloudinary.com/dqzpd5jdd/image/upload/v1782377752/jh4szqyqfy19px49pxu4.png)
 
 ---
-## Q6. What is flow chat with example  🌟
+# Q6. What is flow chat with example  🌟
 
 A flow chart is the graphical/pictorial representation of an algorithm is called a flowchart
 
