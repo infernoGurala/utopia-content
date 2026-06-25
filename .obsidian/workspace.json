@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C Language/index.md",
+                "file": "C Language/Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Questions"
             }
           }
         ]
@@ -185,8 +185,9 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
+    "files/Algorithm Questions.md",
+    "C Language/Questions.md",
     "index.md",
-    "C Language/index.md",
     "16-Other/EXTRA/thermodyanmics/Explain about the concept of continuum with diagram..md",
     "02-Thermodynamics/01 Introduction.md",
     "16-Other/EXTRA/thermodyanmics/explain work and heat, its types and sign convections.md",
@@ -222,7 +223,6 @@
     "04-BEEE/01 DC and AC circuits.md",
     "16-Other/EXTRA/Chemistry/61WlteI-H4L.jpg",
     "03-DEVC/01 First Order ODEs.md",
-    "04-BEEE/Exam prep.md",
     "16-Other/EXTRA/Chemistry/61WlteI-H4L.jpg.part",
     "Pasted image 20260329115423.png",
     "16-Other/EXTRA/Chemistry",
