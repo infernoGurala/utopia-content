@@ -11,14 +11,10 @@
             "id": "47b8404a8c1c2a39",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02-Thermodynamics/01 Introduction.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "01 Introduction"
+              "title": "New tab"
             }
           }
         ]
