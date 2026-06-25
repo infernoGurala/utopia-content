@@ -1,8 +1,8 @@
 ---
-title: Cheat code 3003S
+title: Inferno's notes
 socialImage: https://utopia.inferalis.space/static/og-image.png
 ---
-If the system is stupid, why not have it?
+markdown vault
 
 <div class="course-grid">
   <a href="C Language" class="course-card"><span class="course-icon material-symbols-outlined">code</span>C Language</a>
