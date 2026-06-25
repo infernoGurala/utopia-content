@@ -30,7 +30,7 @@ Key points about algorithms: they receive input, contain a sequence of statement
 1. Start
 2. Read A and B.
 3. If A > B, print A.
-4. Otherwise, print B.
+4. else, print B.
 5. Stop.
 
 **Example:**
