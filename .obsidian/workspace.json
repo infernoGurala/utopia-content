@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C Language/Questions.md",
+                "file": "files/Algorithm Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Questions"
+              "title": "Algorithm Questions"
             }
           }
         ]
@@ -185,8 +185,8 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
-    "files/OPERATORS & TYPE CASTING.md",
     "C Language/Questions.md",
+    "files/OPERATORS & TYPE CASTING.md",
     "files/DATA TYPES, KEYWORDS & VARIABLES.md",
     "files/Structure of C & Input and Output.md",
     "files/Algorithm Questions.md",
