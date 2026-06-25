@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C Language/Questions.md",
+                "file": "files/Algorithm Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Questions"
+              "title": "Algorithm Questions"
             }
           }
         ]
@@ -185,8 +185,8 @@
   },
   "active": "47b8404a8c1c2a39",
   "lastOpenFiles": [
-    "files/Algorithm Questions.md",
     "C Language/Questions.md",
+    "files/Algorithm Questions.md",
     "index.md",
     "16-Other/EXTRA/thermodyanmics/Explain about the concept of continuum with diagram..md",
     "02-Thermodynamics/01 Introduction.md",

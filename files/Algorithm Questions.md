@@ -1,4 +1,4 @@
-# Q. WHAT is Algorithm
+# Q. WHAT is Algorithm 🌟
 
 
 An algorithm is a set of finite number of steps to solve a problem. It takes some **input**, **processes** it through a set of instructions, and produces the required **output**.
@@ -7,7 +7,7 @@ Key points about algorithms: they receive input, contain a sequence of statement
 
 ---
 
-## Q. Characteristics of an Algorithm
+## Q. Characteristics of an Algorithm 🌟
 
 **1. Clear & Unambiguous** — Every step must be precisely and clearly stated with no room for confusion or misunderstanding about what to do.
 
@@ -23,7 +23,7 @@ Key points about algorithms: they receive input, contain a sequence of statement
 
 ---
 
-## Q. Example Algorithm: Find the Largest of Two Numbers
+## Q. Example Algorithm: Find the Largest of Two Numbers 
 
 1. Start
 2. Read A and B.
@@ -84,16 +84,16 @@ Nested loop: O($n^{2}$) --> loop inside a loop
 # Q. Different problem-solving approaches
 
 There are 2 main approaches:
-1. top-down
+1. **top-down**
 	you start with the big problem, then break it into smaller sub-problems, and keep breaking those down until each piece is simple enough to solve directly.
 	EX: to calculate student result, take the total marks directly, then calculate percentages, decide pass or fail.
-2. bottom-up
+2. **bottom-up**
 	You start by solving the smallest, simplest parts first, then combine them to build up the full solution.
 	EX: same example, but here build small programs like a way to calculate percentage,  total marks, pass threshold logic, etc.. and merge them at last. 
 ![](https://res.cloudinary.com/dqzpd5jdd/image/upload/v1782377752/jh4szqyqfy19px49pxu4.png)
 
 ---
-## Q. What is flow chat with example 
+## Q. What is flow chat with example  🌟
 
 A flow chart is the graphical/pictorial representation of an algorithm is called a flowchart
 
